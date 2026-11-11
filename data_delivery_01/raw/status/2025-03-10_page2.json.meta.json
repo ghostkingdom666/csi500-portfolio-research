@@ -1,0 +1,26 @@
+{
+  "attempt": 1,
+  "bytes": 119011,
+  "headers": {
+    "Ali-Swift-Global-Savetime": "1794334236",
+    "Cache-Control": "no-cache",
+    "Connection": "close",
+    "Content-Type": "text/plain;charset=UTF-8",
+    "Date": "Tue, 10 Nov 2026 18:10:36 GMT",
+    "EagleId": "de49211917943342361265218e",
+    "Server": "Tengine",
+    "Set-Cookie": "JSESSIONID=18A398C17F3F79962BF4ECB8510AA74B; Path=/; HttpOnly",
+    "Timing-Allow-Origin": "*",
+    "Transfer-Encoding": "chunked",
+    "Vary": "Accept-Encoding",
+    "Via": "ens-cache26.l2cn9026[316,315,200-0,M], ens-cache43.l2cn9026[317,0], vcache22.cn5626[324,324,200-0,M], vcache5.cn5626[326,0]",
+    "X-Cache": "MISS TCP_MISS dirn:-2:-2",
+    "X-Swift-CacheTime": "0",
+    "X-Swift-SaveTime": "Tue, 10 Nov 2026 18:10:36 GMT"
+  },
+  "http_status": 200,
+  "path": "raw/status/2025-03-10_page2.json",
+  "retrieved_at": "2026-11-11T02:10:35+08:00",
+  "sha256": "e44274018b2b973aea9bdbb776f20e68f247bb561af30e3f7cea8c07bf246b12",
+  "url": "https://datacenter-web.eastmoney.com/api/data/v1/get?reportName=RPT_CUSTOM_SUSPEND_DATA_INTERFACE&columns=ALL&pageSize=500&pageNumber=2&sortColumns=SUSPEND_START_DATE&sortTypes=-1&source=WEB&client=WEB&filter=%28MARKET%3D%22%E5%85%A8%E9%83%A8%22%29%28DATETIME%3D%272025-03-10%27%29"
+}

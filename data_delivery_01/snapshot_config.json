@@ -1,0 +1,22 @@
+{
+  "adjustment": "hfq",
+  "anchor_date": "2024-12-31",
+  "closed_date_candidate": "2026-11-10",
+  "created_at": "2026-11-11T02:00:22+08:00",
+  "data_version": "csi500_20261111T020022_current_v1",
+  "estimation_end": "2026-06-30",
+  "historical_fallback_authorized": true,
+  "historical_pool_verified": false,
+  "pool_type": "current_constituents_retrospective",
+  "price_source": "eastmoney",
+  "requested_end": "2026-11-11",
+  "requested_start": "2025-01-01",
+  "sample_assets": [
+    "600004.SH",
+    "000009.SZ",
+    "300001.SZ"
+  ],
+  "subset_size": 100,
+  "test_start": "2026-07-01",
+  "universe_source": "https://oss-ch.csindex.com.cn/static/html/csindex/public/uploads/file/autofile/cons/000905cons.xls"
+}

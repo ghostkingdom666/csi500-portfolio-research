@@ -1,0 +1,22 @@
+{
+  "attempt": 1,
+  "bytes": 29581,
+  "headers": {
+    "Connection": "close",
+    "Content-Security-Policy": "style-src 'self' https://*.sseinfo.com https://*.sse.com.cn  https://yunhq.sse.com.cn:32042 'unsafe-inline'; script-src 'self' https://*.sseinfo.com https://*.sse.com.cn https://yunhq.sse.com.cn:32042  'unsafe-inline' 'unsafe-eval';worker-src www.sse.com.cn play.szs.nagasoft.cn blob:;  frame-ancestors *.sse.com.cn *.sseinfo.com ",
+    "Content-Type": "text/html",
+    "Date": "Tue, 10 Nov 2026 17:57:54 GMT",
+    "Referrer-Policy": "origin-when-cross-origin",
+    "Server": "nginx",
+    "Transfer-Encoding": "chunked",
+    "Vary": "Accept-Encoding",
+    "X-Download-Options": "noopen",
+    "X-Permitted-Cross-Domain-Policies": "none",
+    "X-Xss-Protection": "1"
+  },
+  "http_status": 200,
+  "path": "raw/references/sse_2026.html",
+  "retrieved_at": "2026-11-11T01:57:54+08:00",
+  "sha256": "4511d76abb438945008cd8b91df2c6a1e94e744c01a826f8e17d53feedb32b5f",
+  "url": "https://www.sse.com.cn/disclosure/dealinstruc/closed/"
+}

@@ -1,0 +1,21 @@
+{
+  "attempt": 1,
+  "bytes": 41992,
+  "headers": {
+    "Access-Control-Allow-Credentials": "true",
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+    "Access-Control-Allow-Origin": "*",
+    "Cache-Control": "no-cache",
+    "Connection": "close",
+    "Content-Length": "41992",
+    "Content-Type": "application/json; charset=UTF-8",
+    "Date": "Tue, 10 Nov 2026 18:03:09 GMT",
+    "Server": "Microsoft-IIS/10.0",
+    "Vary": "Accept-Encoding"
+  },
+  "http_status": 200,
+  "path": "raw/index/000905.json",
+  "retrieved_at": "2026-11-11T02:03:08+08:00",
+  "sha256": "1bbb00afdadf5986081a6b88739f151b0596864cb7f3370081a4fd9b393f2dfd",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.000905&klt=101&fqt=0&beg=20241231&end=20261111&lmt=1000&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61"
+}

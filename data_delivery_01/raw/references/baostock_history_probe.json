@@ -1,0 +1,9 @@
+{
+  "exception": "RuntimeError('网络接收错误。')",
+  "is_official_announcement": false,
+  "login_code": "10002007",
+  "login_msg": "网络接收错误。",
+  "provider": "baostock",
+  "queried_at": "2026-11-11T01:59:27+08:00",
+  "query_date": "2026-06-30"
+}

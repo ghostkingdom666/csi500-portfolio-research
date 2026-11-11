@@ -1,0 +1,18 @@
+{
+  "attempt": 1,
+  "bytes": 29055,
+  "headers": {
+    "Access-Control-Allow-Origin": "*",
+    "Connection": "close",
+    "Content-Type": "text/html; charset=UTF-8",
+    "Date": "Tue, 10 Nov 2026 18:01:04 GMT",
+    "Server": "TAPISIX/3.3.2",
+    "Transfer-Encoding": "chunked",
+    "Vary": "Accept-Encoding"
+  },
+  "http_status": 200,
+  "path": "raw/crosscheck/000009.SZ_raw.json",
+  "retrieved_at": "2026-11-11T02:01:03+08:00",
+  "sha256": "4d5eab1b9fdf2600b2fca4c068d44897052aa1c4d21bb11137d24bebdf6817de",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sz000009%2Cday%2C2024-12-31%2C2026-11-11%2C1000%2C"
+}

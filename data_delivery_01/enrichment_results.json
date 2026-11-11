@@ -1,0 +1,1026 @@
+{
+  "corporate_action_requests": [
+    {
+      "asset_id": "000582.SZ",
+      "ok": true
+    },
+    {
+      "asset_id": "000831.SZ",
+      "ok": true
+    },
+    {
+      "asset_id": "000878.SZ",
+      "ok": true
+    },
+    {
+      "asset_id": "000959.SZ",
+      "ok": true
+    },
+    {
+      "asset_id": "002131.SZ",
+      "ok": true
+    },
+    {
+      "asset_id": "002153.SZ",
+      "ok": true
+    },
+    {
+      "asset_id": "002155.SZ",
+      "ok": true
+    },
+    {
+      "asset_id": "002185.SZ",
+      "ok": true
+    },
+    {
+      "asset_id": "002252.SZ",
+      "ok": true
+    },
+    {
+      "asset_id": "002812.SZ",
+      "ok": true
+    },
+    {
+      "asset_id": "300142.SZ",
+      "ok": true
+    },
+    {
+      "asset_id": "300373.SZ",
+      "ok": true
+    },
+    {
+      "asset_id": "300567.SZ",
+      "ok": true
+    },
+    {
+      "asset_id": "300620.SZ",
+      "ok": true
+    },
+    {
+      "asset_id": "300666.SZ",
+      "ok": true
+    },
+    {
+      "asset_id": "600095.SH",
+      "ok": true
+    },
+    {
+      "asset_id": "600208.SH",
+      "ok": true
+    },
+    {
+      "asset_id": "600499.SH",
+      "ok": true
+    },
+    {
+      "asset_id": "600566.SH",
+      "ok": true
+    },
+    {
+      "asset_id": "600711.SH",
+      "ok": true
+    },
+    {
+      "asset_id": "600863.SH",
+      "ok": true
+    },
+    {
+      "asset_id": "600988.SH",
+      "ok": true
+    },
+    {
+      "asset_id": "601555.SH",
+      "ok": true
+    },
+    {
+      "asset_id": "601615.SH",
+      "ok": true
+    },
+    {
+      "asset_id": "688037.SH",
+      "ok": true
+    },
+    {
+      "asset_id": "688313.SH",
+      "ok": true
+    },
+    {
+      "asset_id": "688347.SH",
+      "ok": true
+    }
+  ],
+  "status_requests": [
+    {
+      "date": "2024-12-31",
+      "ok": true,
+      "pages": 2,
+      "records": 819
+    },
+    {
+      "date": "2025-01-02",
+      "ok": true,
+      "pages": 2,
+      "records": 817
+    },
+    {
+      "date": "2025-01-03",
+      "ok": true,
+      "pages": 2,
+      "records": 816
+    },
+    {
+      "date": "2025-01-06",
+      "ok": true,
+      "pages": 2,
+      "records": 815
+    },
+    {
+      "date": "2025-02-11",
+      "ok": true,
+      "pages": 2,
+      "records": 789
+    },
+    {
+      "date": "2025-02-12",
+      "ok": true,
+      "pages": 2,
+      "records": 788
+    },
+    {
+      "date": "2025-02-13",
+      "ok": true,
+      "pages": 2,
+      "records": 788
+    },
+    {
+      "date": "2025-02-14",
+      "ok": true,
+      "pages": 2,
+      "records": 788
+    },
+    {
+      "date": "2025-02-17",
+      "ok": true,
+      "pages": 2,
+      "records": 788
+    },
+    {
+      "date": "2025-02-18",
+      "ok": true,
+      "pages": 2,
+      "records": 785
+    },
+    {
+      "date": "2025-02-19",
+      "ok": true,
+      "pages": 2,
+      "records": 785
+    },
+    {
+      "date": "2025-02-20",
+      "ok": true,
+      "pages": 2,
+      "records": 785
+    },
+    {
+      "date": "2025-03-06",
+      "ok": true,
+      "pages": 2,
+      "records": 778
+    },
+    {
+      "date": "2025-03-07",
+      "ok": true,
+      "pages": 2,
+      "records": 777
+    },
+    {
+      "date": "2025-03-10",
+      "ok": true,
+      "pages": 2,
+      "records": 776
+    },
+    {
+      "date": "2025-03-13",
+      "ok": true,
+      "pages": 2,
+      "records": 772
+    },
+    {
+      "date": "2025-03-14",
+      "ok": true,
+      "pages": 2,
+      "records": 769
+    },
+    {
+      "date": "2025-03-17",
+      "ok": true,
+      "pages": 2,
+      "records": 769
+    },
+    {
+      "date": "2025-03-18",
+      "ok": true,
+      "pages": 2,
+      "records": 765
+    },
+    {
+      "date": "2025-03-19",
+      "ok": true,
+      "pages": 2,
+      "records": 763
+    },
+    {
+      "date": "2025-03-20",
+      "ok": true,
+      "pages": 2,
+      "records": 762
+    },
+    {
+      "date": "2025-03-21",
+      "ok": true,
+      "pages": 2,
+      "records": 762
+    },
+    {
+      "date": "2025-03-24",
+      "ok": true,
+      "pages": 2,
+      "records": 761
+    },
+    {
+      "date": "2025-03-25",
+      "ok": true,
+      "pages": 2,
+      "records": 757
+    },
+    {
+      "date": "2025-03-26",
+      "ok": true,
+      "pages": 2,
+      "records": 757
+    },
+    {
+      "date": "2025-03-27",
+      "ok": true,
+      "pages": 2,
+      "records": 757
+    },
+    {
+      "date": "2025-03-28",
+      "ok": true,
+      "pages": 2,
+      "records": 755
+    },
+    {
+      "date": "2025-04-22",
+      "ok": true,
+      "pages": 2,
+      "records": 730
+    },
+    {
+      "date": "2025-04-23",
+      "ok": true,
+      "pages": 2,
+      "records": 728
+    },
+    {
+      "date": "2025-04-24",
+      "ok": true,
+      "pages": 2,
+      "records": 728
+    },
+    {
+      "date": "2025-05-13",
+      "ok": true,
+      "pages": 2,
+      "records": 701
+    },
+    {
+      "date": "2025-05-14",
+      "ok": true,
+      "pages": 2,
+      "records": 699
+    },
+    {
+      "date": "2025-05-15",
+      "ok": true,
+      "pages": 2,
+      "records": 699
+    },
+    {
+      "date": "2025-05-16",
+      "ok": true,
+      "pages": 2,
+      "records": 699
+    },
+    {
+      "date": "2025-05-19",
+      "ok": true,
+      "pages": 2,
+      "records": 699
+    },
+    {
+      "date": "2025-05-20",
+      "ok": true,
+      "pages": 2,
+      "records": 696
+    },
+    {
+      "date": "2025-05-21",
+      "ok": true,
+      "pages": 2,
+      "records": 689
+    },
+    {
+      "date": "2025-05-22",
+      "ok": true,
+      "pages": 2,
+      "records": 689
+    },
+    {
+      "date": "2025-05-23",
+      "ok": true,
+      "pages": 2,
+      "records": 688
+    },
+    {
+      "date": "2025-06-30",
+      "ok": true,
+      "pages": 2,
+      "records": 636
+    },
+    {
+      "date": "2025-07-01",
+      "ok": true,
+      "pages": 2,
+      "records": 634
+    },
+    {
+      "date": "2025-07-02",
+      "ok": true,
+      "pages": 2,
+      "records": 633
+    },
+    {
+      "date": "2025-07-03",
+      "ok": true,
+      "pages": 2,
+      "records": 632
+    },
+    {
+      "date": "2025-07-04",
+      "ok": true,
+      "pages": 2,
+      "records": 631
+    },
+    {
+      "date": "2025-07-07",
+      "ok": true,
+      "pages": 2,
+      "records": 630
+    },
+    {
+      "date": "2025-07-08",
+      "ok": true,
+      "pages": 2,
+      "records": 628
+    },
+    {
+      "date": "2025-07-09",
+      "ok": true,
+      "pages": 2,
+      "records": 627
+    },
+    {
+      "date": "2025-07-10",
+      "ok": true,
+      "pages": 2,
+      "records": 624
+    },
+    {
+      "date": "2025-07-18",
+      "ok": true,
+      "pages": 2,
+      "records": 612
+    },
+    {
+      "date": "2025-07-29",
+      "ok": true,
+      "pages": 2,
+      "records": 601
+    },
+    {
+      "date": "2025-07-30",
+      "ok": true,
+      "pages": 2,
+      "records": 596
+    },
+    {
+      "date": "2025-07-31",
+      "ok": true,
+      "pages": 2,
+      "records": 595
+    },
+    {
+      "date": "2025-08-01",
+      "ok": true,
+      "pages": 2,
+      "records": 595
+    },
+    {
+      "date": "2025-08-04",
+      "ok": true,
+      "pages": 2,
+      "records": 595
+    },
+    {
+      "date": "2025-08-05",
+      "ok": true,
+      "pages": 2,
+      "records": 595
+    },
+    {
+      "date": "2025-08-06",
+      "ok": true,
+      "pages": 2,
+      "records": 594
+    },
+    {
+      "date": "2025-08-07",
+      "ok": true,
+      "pages": 2,
+      "records": 593
+    },
+    {
+      "date": "2025-08-08",
+      "ok": true,
+      "pages": 2,
+      "records": 592
+    },
+    {
+      "date": "2025-08-11",
+      "ok": true,
+      "pages": 2,
+      "records": 592
+    },
+    {
+      "date": "2025-08-12",
+      "ok": true,
+      "pages": 2,
+      "records": 590
+    },
+    {
+      "date": "2025-08-13",
+      "ok": true,
+      "pages": 2,
+      "records": 589
+    },
+    {
+      "date": "2025-08-18",
+      "ok": true,
+      "pages": 2,
+      "records": 586
+    },
+    {
+      "date": "2025-08-19",
+      "ok": true,
+      "pages": 2,
+      "records": 585
+    },
+    {
+      "date": "2025-08-20",
+      "ok": true,
+      "pages": 2,
+      "records": 583
+    },
+    {
+      "date": "2025-08-21",
+      "ok": true,
+      "pages": 2,
+      "records": 583
+    },
+    {
+      "date": "2025-08-22",
+      "ok": true,
+      "pages": 2,
+      "records": 582
+    },
+    {
+      "date": "2025-08-25",
+      "ok": true,
+      "pages": 2,
+      "records": 582
+    },
+    {
+      "date": "2025-08-26",
+      "ok": true,
+      "pages": 2,
+      "records": 580
+    },
+    {
+      "date": "2025-08-27",
+      "ok": true,
+      "pages": 2,
+      "records": 578
+    },
+    {
+      "date": "2025-08-28",
+      "ok": true,
+      "pages": 2,
+      "records": 577
+    },
+    {
+      "date": "2025-08-29",
+      "ok": true,
+      "pages": 2,
+      "records": 576
+    },
+    {
+      "date": "2025-09-25",
+      "ok": true,
+      "pages": 2,
+      "records": 557
+    },
+    {
+      "date": "2025-09-26",
+      "ok": true,
+      "pages": 2,
+      "records": 556
+    },
+    {
+      "date": "2025-09-29",
+      "ok": true,
+      "pages": 2,
+      "records": 556
+    },
+    {
+      "date": "2025-09-30",
+      "ok": true,
+      "pages": 2,
+      "records": 553
+    },
+    {
+      "date": "2025-10-09",
+      "ok": true,
+      "pages": 2,
+      "records": 551
+    },
+    {
+      "date": "2025-10-10",
+      "ok": true,
+      "pages": 2,
+      "records": 550
+    },
+    {
+      "date": "2025-10-13",
+      "ok": true,
+      "pages": 2,
+      "records": 548
+    },
+    {
+      "date": "2025-10-14",
+      "ok": true,
+      "pages": 2,
+      "records": 547
+    },
+    {
+      "date": "2025-10-15",
+      "ok": true,
+      "pages": 2,
+      "records": 546
+    },
+    {
+      "date": "2025-10-16",
+      "ok": true,
+      "pages": 2,
+      "records": 546
+    },
+    {
+      "date": "2025-12-01",
+      "ok": true,
+      "pages": 2,
+      "records": 502
+    },
+    {
+      "date": "2025-12-02",
+      "ok": true,
+      "pages": 1,
+      "records": 499
+    },
+    {
+      "date": "2025-12-03",
+      "ok": true,
+      "pages": 1,
+      "records": 497
+    },
+    {
+      "date": "2025-12-04",
+      "ok": true,
+      "pages": 1,
+      "records": 494
+    },
+    {
+      "date": "2025-12-05",
+      "ok": true,
+      "pages": 1,
+      "records": 493
+    },
+    {
+      "date": "2025-12-08",
+      "ok": true,
+      "pages": 1,
+      "records": 493
+    },
+    {
+      "date": "2025-12-09",
+      "ok": true,
+      "pages": 1,
+      "records": 490
+    },
+    {
+      "date": "2025-12-10",
+      "ok": true,
+      "pages": 1,
+      "records": 488
+    },
+    {
+      "date": "2025-12-11",
+      "ok": true,
+      "pages": 1,
+      "records": 487
+    },
+    {
+      "date": "2025-12-12",
+      "ok": true,
+      "pages": 1,
+      "records": 483
+    },
+    {
+      "date": "2026-01-12",
+      "ok": true,
+      "pages": 1,
+      "records": 452
+    },
+    {
+      "date": "2026-01-13",
+      "ok": true,
+      "pages": 1,
+      "records": 449
+    },
+    {
+      "date": "2026-01-14",
+      "ok": true,
+      "pages": 1,
+      "records": 449
+    },
+    {
+      "date": "2026-01-15",
+      "ok": true,
+      "pages": 1,
+      "records": 448
+    },
+    {
+      "date": "2026-01-16",
+      "ok": true,
+      "pages": 1,
+      "records": 445
+    },
+    {
+      "date": "2026-01-19",
+      "ok": true,
+      "pages": 1,
+      "records": 442
+    },
+    {
+      "date": "2026-01-20",
+      "ok": true,
+      "pages": 1,
+      "records": 439
+    },
+    {
+      "date": "2026-01-21",
+      "ok": true,
+      "pages": 1,
+      "records": 434
+    },
+    {
+      "date": "2026-01-22",
+      "ok": true,
+      "pages": 1,
+      "records": 433
+    },
+    {
+      "date": "2026-01-23",
+      "ok": true,
+      "pages": 1,
+      "records": 432
+    },
+    {
+      "date": "2026-01-26",
+      "ok": true,
+      "pages": 1,
+      "records": 431
+    },
+    {
+      "date": "2026-01-27",
+      "ok": true,
+      "pages": 1,
+      "records": 431
+    },
+    {
+      "date": "2026-01-28",
+      "ok": true,
+      "pages": 1,
+      "records": 430
+    },
+    {
+      "date": "2026-01-30",
+      "ok": true,
+      "pages": 1,
+      "records": 428
+    },
+    {
+      "date": "2026-02-02",
+      "ok": true,
+      "pages": 1,
+      "records": 428
+    },
+    {
+      "date": "2026-02-03",
+      "ok": true,
+      "pages": 1,
+      "records": 427
+    },
+    {
+      "date": "2026-02-04",
+      "ok": true,
+      "pages": 1,
+      "records": 427
+    },
+    {
+      "date": "2026-02-05",
+      "ok": true,
+      "pages": 1,
+      "records": 424
+    },
+    {
+      "date": "2026-03-02",
+      "ok": true,
+      "pages": 1,
+      "records": 410
+    },
+    {
+      "date": "2026-03-03",
+      "ok": true,
+      "pages": 1,
+      "records": 410
+    },
+    {
+      "date": "2026-03-04",
+      "ok": true,
+      "pages": 1,
+      "records": 407
+    },
+    {
+      "date": "2026-03-05",
+      "ok": true,
+      "pages": 1,
+      "records": 407
+    },
+    {
+      "date": "2026-03-06",
+      "ok": true,
+      "pages": 1,
+      "records": 406
+    },
+    {
+      "date": "2026-03-09",
+      "ok": true,
+      "pages": 1,
+      "records": 406
+    },
+    {
+      "date": "2026-03-10",
+      "ok": true,
+      "pages": 1,
+      "records": 404
+    },
+    {
+      "date": "2026-03-11",
+      "ok": true,
+      "pages": 1,
+      "records": 404
+    },
+    {
+      "date": "2026-03-12",
+      "ok": true,
+      "pages": 1,
+      "records": 402
+    },
+    {
+      "date": "2026-03-13",
+      "ok": true,
+      "pages": 1,
+      "records": 402
+    },
+    {
+      "date": "2026-03-17",
+      "ok": true,
+      "pages": 1,
+      "records": 401
+    },
+    {
+      "date": "2026-03-18",
+      "ok": true,
+      "pages": 1,
+      "records": 400
+    },
+    {
+      "date": "2026-03-19",
+      "ok": true,
+      "pages": 1,
+      "records": 400
+    },
+    {
+      "date": "2026-03-20",
+      "ok": true,
+      "pages": 1,
+      "records": 399
+    },
+    {
+      "date": "2026-03-27",
+      "ok": true,
+      "pages": 1,
+      "records": 395
+    },
+    {
+      "date": "2026-03-30",
+      "ok": true,
+      "pages": 1,
+      "records": 394
+    },
+    {
+      "date": "2026-03-31",
+      "ok": true,
+      "pages": 1,
+      "records": 392
+    },
+    {
+      "date": "2026-04-01",
+      "ok": true,
+      "pages": 1,
+      "records": 385
+    },
+    {
+      "date": "2026-04-02",
+      "ok": true,
+      "pages": 1,
+      "records": 382
+    },
+    {
+      "date": "2026-04-03",
+      "ok": true,
+      "pages": 1,
+      "records": 380
+    },
+    {
+      "date": "2026-04-07",
+      "ok": true,
+      "pages": 1,
+      "records": 378
+    },
+    {
+      "date": "2026-04-08",
+      "ok": true,
+      "pages": 1,
+      "records": 376
+    },
+    {
+      "date": "2026-04-09",
+      "ok": true,
+      "pages": 1,
+      "records": 371
+    },
+    {
+      "date": "2026-04-10",
+      "ok": true,
+      "pages": 1,
+      "records": 370
+    },
+    {
+      "date": "2026-07-09",
+      "ok": true,
+      "pages": 1,
+      "records": 130
+    },
+    {
+      "date": "2026-07-10",
+      "ok": true,
+      "pages": 1,
+      "records": 129
+    },
+    {
+      "date": "2026-07-13",
+      "ok": true,
+      "pages": 1,
+      "records": 128
+    },
+    {
+      "date": "2026-07-14",
+      "ok": true,
+      "pages": 1,
+      "records": 124
+    },
+    {
+      "date": "2026-07-15",
+      "ok": true,
+      "pages": 1,
+      "records": 121
+    },
+    {
+      "date": "2026-08-20",
+      "ok": true,
+      "pages": 1,
+      "records": 86
+    },
+    {
+      "date": "2026-08-21",
+      "ok": true,
+      "pages": 1,
+      "records": 86
+    },
+    {
+      "date": "2026-08-24",
+      "ok": true,
+      "pages": 1,
+      "records": 85
+    },
+    {
+      "date": "2026-08-25",
+      "ok": true,
+      "pages": 1,
+      "records": 81
+    },
+    {
+      "date": "2026-08-26",
+      "ok": true,
+      "pages": 1,
+      "records": 79
+    },
+    {
+      "date": "2026-10-08",
+      "ok": true,
+      "pages": 1,
+      "records": 41
+    },
+    {
+      "date": "2026-10-09",
+      "ok": true,
+      "pages": 1,
+      "records": 41
+    },
+    {
+      "date": "2026-11-02",
+      "ok": true,
+      "pages": 1,
+      "records": 14
+    },
+    {
+      "date": "2026-11-03",
+      "ok": true,
+      "pages": 1,
+      "records": 12
+    },
+    {
+      "date": "2026-11-04",
+      "ok": true,
+      "pages": 1,
+      "records": 11
+    },
+    {
+      "date": "2026-11-05",
+      "ok": true,
+      "pages": 1,
+      "records": 9
+    },
+    {
+      "date": "2026-11-06",
+      "ok": true,
+      "pages": 1,
+      "records": 9
+    },
+    {
+      "date": "2026-11-09",
+      "ok": true,
+      "pages": 1,
+      "records": 8
+    },
+    {
+      "date": "2026-11-10",
+      "ok": true,
+      "pages": 1,
+      "records": 8
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+{
+  "checks": [
+    {
+      "check": "all_500_unique_candidates",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "ticker_leading_zeros_preserved",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "identical_labels_order",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "price_unique_keys",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "mask_equals_actual_missingness",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "finite_selected_estimation_returns",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "subset_count_and_dimension",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "no_unresolved_conflicting_or_invalid_prices",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "official_calendar_matches_market_bars",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "sha256:assets.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "sha256:calendar.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "sha256:calendar_all_days.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "sha256:cleaning_audit.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "sha256:corporate_action_checks.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "sha256:extreme_return_review.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "sha256:index_daily.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "sha256:missing_details.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "sha256:missing_mask.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "sha256:model_assets.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "sha256:model_returns_wide.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "sha256:off_calendar_records.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "sha256:periods.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "sha256:prices_long.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "sha256:quality_summary.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "sha256:raw_inventory.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "sha256:returns_wide.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "sha256:selection_audit.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "sha256:status_details.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "sha256:three_stock_sample.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "sha256:质量报告.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:README.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:pipeline.py",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:requirements.txt",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:snapshot_config.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:src/acquire.py",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:src/build.py",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:src/common.py",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:src/enrich.py",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:src/prepare.py",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:src/trading_calendar.py",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:src/validate.py",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:src/verify_announcements.py",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "source_sha256:数据需求与字段字典.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "raw_snapshot_hashes",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hand_calculation_and_gap_propagation",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "verified_suspension_zero_then_resume",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "real_first_return_anchor",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "real_volume_lots_to_shares",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "test_period_cannot_change_selection",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "liquidity_tie_break_by_code",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "exact_duplicates_counted_conflicts_flagged",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "complete_offline_rebuild_identical_file_hashes",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "offline_manifest_identical",
+      "detail": "",
+      "passed": true
+    }
+  ],
+  "checks_failed": 0,
+  "checks_passed": 53,
+  "data_version": "csi500_20261111T020022_current_v1",
+  "human_cross_member_signoff": "pending_not_simulated",
+  "limitations": [
+    "current_constituents_retrospective_not_historical_investable_universe",
+    "survivorship_and_constituent_lookahead_bias",
+    "supplier_hfq_return_proxy_not_strict_total_return",
+    "000009_SZ_adjusted_series_disagrees_between_vendors",
+    "delisting_history_not_independently_verified",
+    "cross_member_signoff_pending"
+  ],
+  "offline_rebuild_executed": true,
+  "technical_blockers": []
+}

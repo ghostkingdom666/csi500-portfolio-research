@@ -1,0 +1,46 @@
+{
+  "adjusted_cross_provider_equivalence_claimed": false,
+  "passed": true,
+  "passed_scope": "raw_prices_volume_required_fields_positive_primary_hfq",
+  "results": [
+    {
+      "adjustment_crosscheck_status": "matches_with_rounding",
+      "asset_id": "600004.SH",
+      "crosscheck_rows": 449,
+      "first_date": "2024-12-31",
+      "last_date": "2026-11-10",
+      "max_adjusted_price_diff_yuan": 0.005000000000002558,
+      "max_adjusted_return_diff": 0.0005004955801112265,
+      "max_raw_close_diff_yuan": 0.0,
+      "max_volume_diff_lots": 0.0,
+      "rounding_interval_check_passed": true,
+      "rows": 449
+    },
+    {
+      "adjustment_crosscheck_status": "vendor_convention_disagreement_disclosed",
+      "asset_id": "000009.SZ",
+      "crosscheck_rows": 449,
+      "first_date": "2024-12-31",
+      "last_date": "2026-11-10",
+      "max_adjusted_price_diff_yuan": 30.672999999999988,
+      "max_adjusted_return_diff": 0.001167511758950024,
+      "max_raw_close_diff_yuan": 0.0,
+      "max_volume_diff_lots": 0.0,
+      "rounding_interval_check_passed": false,
+      "rows": 449
+    },
+    {
+      "adjustment_crosscheck_status": "matches_with_rounding",
+      "asset_id": "300001.SZ",
+      "crosscheck_rows": 449,
+      "first_date": "2024-12-31",
+      "last_date": "2026-11-10",
+      "max_adjusted_price_diff_yuan": 0.005000000000023874,
+      "max_adjusted_return_diff": 5.4715754164158525e-05,
+      "max_raw_close_diff_yuan": 0.0,
+      "max_volume_diff_lots": 0.0,
+      "rounding_interval_check_passed": true,
+      "rows": 449
+    }
+  ]
+}

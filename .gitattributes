@@ -1,0 +1,2 @@
+# Preserve frozen CSV/JSON/source bytes for reproducible SHA256 checks on Windows.
+* -text

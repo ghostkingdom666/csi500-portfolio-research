@@ -1,0 +1,17 @@
+# Private original: contains database connection credentials in appendix.
+/RawPaper.pdf
+
+# Local editors, runtimes and temporary artifacts.
+.obsidian/
+.cache/
+**/__pycache__/
+*.py[cod]
+.venv/
+venv/
+data_delivery_01/vendor/
+data_delivery_01/.validation_cache/
+.env
+.env.*
+!.env.example
+*.pem
+*.key

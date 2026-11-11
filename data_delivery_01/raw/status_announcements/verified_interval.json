@@ -1,0 +1,32 @@
+{
+  "asset_id": "002155.SZ",
+  "confirmed_suspension_dates": [
+    "2026-01-12",
+    "2026-01-13",
+    "2026-01-14",
+    "2026-01-15",
+    "2026-01-16",
+    "2026-01-19",
+    "2026-01-20",
+    "2026-01-21",
+    "2026-01-22",
+    "2026-01-23"
+  ],
+  "evidence": [
+    {
+      "path": "raw/status_announcements/002155_suspend_20260112.pdf",
+      "sha256": "0880850430dccc34d6ffed6f14656f243715166fd0d3f0b8d6f2f82e6f4967ae",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-01-12/1224929055.PDF"
+    },
+    {
+      "path": "raw/status_announcements/002155_resume_20260126.pdf",
+      "sha256": "aedddfce19586b6e389461906669ff13b47b1c0e9e266ce5b8c1d3fbd7e804af",
+      "url": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-01-26/ed783f50-c513-4f81-9713-20bde02af77c.PDF"
+    }
+  ],
+  "inference": "open dates between effective suspension start and exclusive resumption date; no price inference",
+  "reason": "issuer suspension and SZSE-hosted resumption notices; primary status interface omitted this earlier episode",
+  "resume_date": "2026-01-26",
+  "start_date": "2026-01-12",
+  "status": "confirmed_suspended"
+}

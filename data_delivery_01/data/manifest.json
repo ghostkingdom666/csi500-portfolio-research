@@ -1,0 +1,188 @@
+{
+  "adjustment": "hfq",
+  "counts": {
+    "T_greater_than_N_plus_2": true,
+    "aligned_price_rows_including_anchor": 224500,
+    "before_listing_rows": 1105,
+    "collection_count": 500,
+    "confirmed_suspended_rows": 186,
+    "conflicting_date_keys": 0,
+    "download_success_count": 500,
+    "eligible_count": 469,
+    "estimation_T": 359,
+    "estimation_missing_return_cells": 1303,
+    "exact_duplicates_removed": 0,
+    "hfq_rows_after_deduplication": 223201,
+    "invalid_quality_rows": 0,
+    "last_complete_trading_date": "2026-11-10",
+    "last_date_with_raw_bars_for_all_500": "2026-10-30",
+    "latest_day_raw_bars": 499,
+    "latest_day_verified_valuations": 500,
+    "latest_exchange_closed_date": "2026-11-10",
+    "limitations": [
+      "current_constituents_retrospective_not_historical_investable_universe",
+      "survivorship_and_constituent_lookahead_bias",
+      "supplier_hfq_return_proxy_not_strict_total_return",
+      "000009_SZ_adjusted_series_disagrees_between_vendors",
+      "delisting_history_not_independently_verified",
+      "cross_member_signoff_pending"
+    ],
+    "missing_return_cells": 1303,
+    "model_subset_count": 100,
+    "off_calendar_records": 0,
+    "official_calendar_matches_index": true,
+    "raw_price_rows_after_deduplication": 223201,
+    "raw_price_rows_before_deduplication": 223201,
+    "research_trading_days": 448,
+    "returns_columns_assets": 500,
+    "returns_rows": 448,
+    "selected_test_missing_return_cells": 0,
+    "suspension_carry_rows": 19,
+    "technical_blockers": [],
+    "test_missing_return_cells": 0,
+    "test_trading_days_including_entry_date": 89,
+    "unknown_status_rows": 0
+  },
+  "data_version": "csi500_20261111T020022_current_v1",
+  "environment": {
+    "numpy": "2.3.5",
+    "openpyxl": "3.1.5",
+    "pandas": "3.0.1",
+    "python": "3.12.14",
+    "xlrd": "2.0.2"
+  },
+  "files": {
+    "assets.csv": {
+      "bytes": 186257,
+      "sha256": "dc1aca191b0969a6d55f0d02014151a7293725edd5f27dce54b9a91506ff6c0e"
+    },
+    "calendar.csv": {
+      "bytes": 29148,
+      "sha256": "5ef0080a0a30682459e6f890d6a10dfd74fc197a5307ce3c27cee087bd8ad5b7"
+    },
+    "calendar_all_days.csv": {
+      "bytes": 44130,
+      "sha256": "52c0b44556d703e2977aaf270261dcff26463ccb61d0632cb7ce5ef287b16d85"
+    },
+    "cleaning_audit.csv": {
+      "bytes": 22066,
+      "sha256": "b38448b141327761a8c6dbbca598ca1df1d39d402acea7ec15a4d2b09b953965"
+    },
+    "corporate_action_checks.csv": {
+      "bytes": 2090,
+      "sha256": "a05090c5dd9e83e7652bd29c19ad1043b68fcd35a3d6fd3b46ac12fe3c066ec6"
+    },
+    "extreme_return_review.csv": {
+      "bytes": 249,
+      "sha256": "dc92145dff56bcbabf8a3baeaaa8098c50fa1cc4ec1ba71751bbe5ed700596ea"
+    },
+    "index_daily.csv": {
+      "bytes": 95165,
+      "sha256": "3640c3d4ecb7d9459c094f3bcaec0a586bc6b86bcb583edf7003e55a030b490f"
+    },
+    "missing_details.csv": {
+      "bytes": 116820,
+      "sha256": "f0b51e8175bc9d1ac7357f91244aec9eceee133d45afe0e359a1ba6ef635c52d"
+    },
+    "missing_mask.csv": {
+      "bytes": 457936,
+      "sha256": "c2ecae7406a2500d0bfae2615873f3f4d6c5b4aa81b639900b4b2e0ec3d9eacc"
+    },
+    "model_assets.csv": {
+      "bytes": 37325,
+      "sha256": "c2049d502945e91d6864deec8a76ab7764f132b36aa526d700d11805fadf23d1"
+    },
+    "model_returns_wide.csv": {
+      "bytes": 967281,
+      "sha256": "dd810e5baf4e7ff5dd96695e999de164a39c74cdfe148a6013a62a9bd3a71129"
+    },
+    "off_calendar_records.csv": {
+      "bytes": 22,
+      "sha256": "827ae237a24643e3e9c7c4562453d11d39a6903e240bba005464dcc2faa06a50"
+    },
+    "periods.json": {
+      "bytes": 495,
+      "sha256": "c7ae10de8155136ff34ec547ab3f42287480e85f11000edbd07bf7e1665dd7f0"
+    },
+    "prices_long.csv": {
+      "bytes": 63068807,
+      "sha256": "5025630fa0876f154371151836806d55d589a70bdddf4b04c6813f2a6005b15a"
+    },
+    "quality_summary.json": {
+      "bytes": 1585,
+      "sha256": "f3bf44cda41a29c77c5dda25f38cb88d36bf4acb52617e231d8aa3bec2fe5ac4"
+    },
+    "raw_inventory.csv": {
+      "bytes": 372080,
+      "sha256": "5856cd476b67a2715dc625946294c4eafc8a91eb4248954569bd6a4d1c5e69e1"
+    },
+    "returns_wide.csv": {
+      "bytes": 4771245,
+      "sha256": "4782f149aa6225642b830074b90a64f242cde7b523ebf76ea5f0c9dfaefd8cd7"
+    },
+    "selection_audit.csv": {
+      "bytes": 42658,
+      "sha256": "ee1f6236aa262eea021564cb6ef9c77b377a72ce18c51c0c53c0f9ab86ae5acd"
+    },
+    "status_details.csv": {
+      "bytes": 98180,
+      "sha256": "3262cfd792d5b06647b13bb715061a7a0b8e3a61693f464389cc1d26324c5cf0"
+    },
+    "three_stock_sample.csv": {
+      "bytes": 387411,
+      "sha256": "abedcb2e63e4d5580c2841afff2090d98b7d19b9a2cc238a8f14d6a77e298d18"
+    },
+    "质量报告.md": {
+      "bytes": 5287,
+      "sha256": "46794fab34edef5860f599fcffde09c0d35f5c99f02b65b7355995977630f8e3"
+    }
+  },
+  "historical_pool_verified": false,
+  "last_complete_definition": "every candidate has observed or verified-suspension valuation; raw-bar date separately disclosed",
+  "last_complete_trading_date": "2026-11-10",
+  "last_date_with_raw_bars_for_all_500": "2026-10-30",
+  "latest_exchange_closed_date": "2026-11-10",
+  "limitations": [
+    "current_constituents_retrospective_not_historical_investable_universe",
+    "survivorship_and_constituent_lookahead_bias",
+    "supplier_hfq_return_proxy_not_strict_total_return",
+    "000009_SZ_adjusted_series_disagrees_between_vendors",
+    "delisting_history_not_independently_verified",
+    "cross_member_signoff_pending"
+  ],
+  "pool_type": "current_constituents_retrospective",
+  "requested_end": "2026-11-11",
+  "requested_end_not_closed_reason": "2026-11-11 market has not opened at snapshot acquisition",
+  "requested_start": "2025-01-01",
+  "retrieval_started_at": "2026-11-11T01:57:54+08:00",
+  "retrieved_at": "2026-11-11T02:13:41+08:00",
+  "return_type": "supplier_adjusted_price_return_proxy",
+  "sharing": "Publicly accessible does not establish redistribution permission; no explicit vendor redistribution license verified. Coursework review only; verify terms before public redistribution.",
+  "snapshot_created_at": "2026-11-11T02:00:22+08:00",
+  "source": "eastmoney",
+  "source_files": {
+    "README.md": "e3e780129d9448621be697482353b4be1790ec95b865ae15d530936ba6c0b0c2",
+    "pipeline.py": "06e385c7e19683d2d6bc548f0fe46892087896831a867f05548ade4cfe6b9302",
+    "requirements.txt": "ca068654dd2eb064e1d28961a135048f7df9911da0e6bc298fe799fad91febf3",
+    "snapshot_config.json": "73dfc5d710ee473550a63f401f8b5695dd2957436e8e2a41dc25f095d195e432",
+    "src/acquire.py": "34cf4dfc2b51d005912ed009273083a2f3396dd3aa35342d0f604e7ca84d3948",
+    "src/build.py": "6d3cf616fc3286da36174d2fc3e3f6ab1a0c8473320b94a0f7f98d7585343e91",
+    "src/common.py": "6769139eac1503e64f4ce86d9f439c1d416a6dbc3af87b51ffb98fed276a0071",
+    "src/enrich.py": "c751813bfa666d287a684a5dfa99fdefad973d35154f0fd3d899448b305d3768",
+    "src/prepare.py": "18134e44db72a4e2930734af389a60af3962e4188d895e7e83a97fd0429c40c6",
+    "src/trading_calendar.py": "7052e0333a863e6d1976bb7593b08af8fccecd89087b73b629279d04591e4536",
+    "src/validate.py": "ea1a16b7ab3e1f2e79a228fa4fc2726fdab629c9757bf509faf9971121efb26a",
+    "src/verify_announcements.py": "180e3578cd6cb442eba4e774a4c90d915a9452c4dca5d468f75484da0ce682c8",
+    "数据需求与字段字典.md": "65052a06912852af3c7b97c936e15672ec53d56fd4afc0c5b29f15f06edf5efa"
+  },
+  "status": "usable_with_disclosed_limitations",
+  "subset_rule": "estimation-only complete finite returns/amount, no conflicts; mean amount desc, asset_id asc; top 100",
+  "technical_blockers": [],
+  "units": {
+    "adjusted_price": "supplier_hfq_CNY/share",
+    "amount": "CNY",
+    "raw_price": "CNY/share",
+    "return": "decimal",
+    "volume": "shares"
+  }
+}

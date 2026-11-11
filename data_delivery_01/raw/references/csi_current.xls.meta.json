@@ -1,0 +1,24 @@
+{
+  "attempt": 1,
+  "bytes": 108544,
+  "headers": {
+    "Accept-Ranges": "bytes",
+    "Connection": "close",
+    "Content-Length": "108544",
+    "Content-MD5": "9AsKx7z4iGo+B3Z5v64QyA==",
+    "Content-Type": "application/vnd.ms-excel",
+    "Date": "Tue, 10 Nov 2026 17:57:55 GMT",
+    "ETag": "\"F40B0AC7BCF8886A3E077679BFAE10C8\"",
+    "Last-Modified": "Tue, 10 Nov 2026 14:35:52 GMT",
+    "x-oss-hash-crc64ecma": "9233052461718217556",
+    "x-oss-object-type": "Normal",
+    "x-oss-request-id": "6AF35B229BFE413739B4C57A",
+    "x-oss-server-time": "3",
+    "x-oss-storage-class": "Standard"
+  },
+  "http_status": 200,
+  "path": "raw/references/csi_current.xls",
+  "retrieved_at": "2026-11-11T01:57:54+08:00",
+  "sha256": "e30b33169fe109cf2e8af5e983907030c5edefb7fa5039bbd12a08e74b79405e",
+  "url": "https://oss-ch.csindex.com.cn/static/html/csindex/public/uploads/file/autofile/cons/000905cons.xls"
+}

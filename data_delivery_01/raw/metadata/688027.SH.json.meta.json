@@ -1,0 +1,21 @@
+{
+  "attempt": 1,
+  "bytes": 165,
+  "headers": {
+    "Access-Control-Allow-Credentials": "true",
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+    "Access-Control-Allow-Origin": "*",
+    "Cache-Control": "no-cache",
+    "Connection": "close",
+    "Content-Length": "165",
+    "Content-Type": "application/json; charset=UTF-8",
+    "Date": "Tue, 10 Nov 2026 18:03:02 GMT",
+    "Server": "Microsoft-IIS/10.0",
+    "Vary": "Accept-Encoding"
+  },
+  "http_status": 200,
+  "path": "raw/metadata/688027.SH.json",
+  "retrieved_at": "2026-11-11T02:03:02+08:00",
+  "sha256": "5245064f91fc5abd2269fcedf482965f822b81d3e4534a88c20a0de59d92f8dc",
+  "url": "https://push2.eastmoney.com/api/qt/stock/get?secid=1.688027&fields=f57%2Cf58%2Cf84%2Cf85%2Cf189"
+}

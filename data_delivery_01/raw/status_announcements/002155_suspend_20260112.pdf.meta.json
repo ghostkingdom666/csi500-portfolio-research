@@ -1,0 +1,27 @@
+{
+  "attempt": 1,
+  "bytes": 166478,
+  "headers": {
+    "Accept-Ranges": "bytes",
+    "Access-Control-Allow-Origin": "http://*.cninfo.com.cn,https://*.cninfo.com.cn,https://*.cs.com.cn",
+    "Age": "658466",
+    "Connection": "close",
+    "Content-Length": "166478",
+    "Content-Type": "application/pdf",
+    "Date": "Tue, 10 Nov 2026 18:13:42 GMT",
+    "IsLatest": "true",
+    "Last-Modified": "Mon, 12 Jan 2026 03:43:32 GMT",
+    "Server": "openresty",
+    "X-CCDN-CacheTTL": "31104000",
+    "X-CCDN-Expires": "4525534",
+    "X-CCDN-REQ-ID-46B1": "5369c22746f074dc726b56952b2e95b2",
+    "nginx-hit": "1",
+    "via": "CHN-SH-CTPN23-CACHE2[31],CHN-SH-CTPN23-CACHE10[0,TCP_HIT,31],CHN-JSwuxi-GLOBAL2-CACHE18[22],CHN-JSwuxi-GLOBAL2-CACHE71[0,TCP_HIT,21]",
+    "x-hcs-proxy-type": "1"
+  },
+  "http_status": 200,
+  "path": "raw/status_announcements/002155_suspend_20260112.pdf",
+  "retrieved_at": "2026-11-11T02:13:41+08:00",
+  "sha256": "0880850430dccc34d6ffed6f14656f243715166fd0d3f0b8d6f2f82e6f4967ae",
+  "url": "https://static.cninfo.com.cn/finalpage/2026-01-12/1224929055.PDF"
+}

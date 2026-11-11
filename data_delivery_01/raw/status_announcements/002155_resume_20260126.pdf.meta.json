@@ -1,0 +1,31 @@
+{
+  "attempt": 1,
+  "bytes": 121827,
+  "headers": {
+    "Accept-Ranges": "bytes",
+    "Access-Control-Allow-Origin": "*",
+    "Age": "3659037",
+    "Ali-Swift-Global-Savetime": "1790675385",
+    "Connection": "close",
+    "Content-Length": "121827",
+    "Content-Type": "application/pdf",
+    "Date": "Tue, 29 Sep 2026 09:49:45 GMT",
+    "ETag": "\"6975c6e9-1dbe3\"",
+    "EagleId": "b4a3937017943344228136704e",
+    "Last-Modified": "Sun, 25 Jan 2026 07:31:53 GMT",
+    "Server": "Tengine",
+    "Set-Cookie": "acw_tc=b4a3937017943344228136704e22491d58c5937906d87625cfe0090f49;path=/;HttpOnly;Max-Age=3600",
+    "Timing-Allow-Origin": "*",
+    "Via": "1.1 varnish-v4, ens-cache13.l2eo166-18[0,2,200-0,H], ens-cache60.l2eo166-18[5,0], ens-cache16.cn9368[0,0,200-0,H], ens-cache20.cn9368[9,0]",
+    "X-Cache": "HIT TCP_HIT dirn:11:491596934",
+    "X-Swift-CacheTime": "4215323",
+    "X-Swift-SaveTime": "Mon, 09 Nov 2026 14:54:22 GMT",
+    "X-UA-Compatible": "IE=EDGE",
+    "X-Varnish": "162204167"
+  },
+  "http_status": 200,
+  "path": "raw/status_announcements/002155_resume_20260126.pdf",
+  "retrieved_at": "2026-11-11T02:13:41+08:00",
+  "sha256": "aedddfce19586b6e389461906669ff13b47b1c0e9e266ce5b8c1d3fbd7e804af",
+  "url": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-01-26/ed783f50-c513-4f81-9713-20bde02af77c.PDF"
+}
