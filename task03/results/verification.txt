@@ -1,0 +1,56 @@
+checks=51 failed=0
+data_version=csi500_20261111T020022_current_v1
+entry=2026-07-01 first_return=2026-07-02 test_end=2026-11-10
+theta_s=0.445229215949987 theta_a=0.0564827668801355 r_c=0.177813375795975
+lambda_max=1.356213415291119
+[PASS] task02:theta_s_reproduced :: 0.445229215949987 vs 0.445229215949987
+[PASS] task02:theta_a_reproduced :: 0.0564827668801355 vs 0.056482766880138
+[PASS] task02:r_c_reproduced :: 0.177813375795975 vs 0.177813375795972
+[PASS] task02:lambda_max_reproduced :: 1.356213415291119 vs 1.356213415291097
+[PASS] task02:weights_sha256_matches_readme :: fbe0d3e385cc1dc9
+[PASS] nav:l1_eta_0:independent_recompute
+[PASS] nav:l1_eta_0.0001:independent_recompute
+[PASS] nav:l1_eta_0.001:independent_recompute
+[PASS] nav:l1_eta_0.01:independent_recompute
+[PASS] nav:l1_eta_0.1:independent_recompute
+[PASS] nav:mv_continuous:independent_recompute
+[PASS] nav:mv_cardinality:independent_recompute
+[PASS] nav:equal:independent_recompute
+[PASS] nav:mv:independent_recompute
+[PASS] nav:cvar_a95:independent_recompute
+[PASS] nav:cvar_a99:independent_recompute
+[PASS] nav:var_a95_s0:independent_recompute
+[PASS] nav:var_a95_s1:independent_recompute
+[PASS] nav:var_a95_s2:independent_recompute
+[PASS] metrics:l1_eta_0:independent_recompute
+[PASS] metrics:l1_eta_0.0001:independent_recompute
+[PASS] metrics:l1_eta_0.001:independent_recompute
+[PASS] metrics:l1_eta_0.01:independent_recompute
+[PASS] metrics:l1_eta_0.1:independent_recompute
+[PASS] metrics:mv_continuous:independent_recompute
+[PASS] metrics:mv_cardinality:independent_recompute
+[PASS] metrics:equal:independent_recompute
+[PASS] metrics:mv:independent_recompute
+[PASS] metrics:cvar_a95:independent_recompute
+[PASS] metrics:cvar_a99:independent_recompute
+[PASS] metrics:var_a95_s0:independent_recompute
+[PASS] metrics:var_a95_s1:independent_recompute
+[PASS] metrics:var_a95_s2:independent_recompute
+[PASS] metrics:csi500_index_price:independent_recompute
+[PASS] daily:l1_eta_0:matches_nav
+[PASS] daily:l1_eta_0.0001:matches_nav
+[PASS] daily:l1_eta_0.001:matches_nav
+[PASS] daily:l1_eta_0.01:matches_nav
+[PASS] daily:l1_eta_0.1:matches_nav
+[PASS] daily:mv_continuous:matches_nav
+[PASS] daily:mv_cardinality:matches_nav
+[PASS] daily:equal:matches_nav
+[PASS] daily:mv:matches_nav
+[PASS] daily:cvar_a95:matches_nav
+[PASS] daily:cvar_a99:matches_nav
+[PASS] daily:var_a95_s0:matches_nav
+[PASS] daily:var_a95_s1:matches_nav
+[PASS] daily:var_a95_s2:matches_nav
+[PASS] daily:csi500_index_price:matches_nav
+[PASS] entry:all_held_assets_tradeable
+[PASS] comparison:consistent_with_metrics
