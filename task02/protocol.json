@@ -1,0 +1,8 @@
+{
+  "data_version": "csi500_20261111T020022_current_v1",
+  "estimation_start": "2025-01-02", "estimation_end": "2026-06-30",
+  "sigma_daily": 0.04, "eta_main": 0.01, "eta_grid": [0, 0.0001, 0.001, 0.01, 0.1],
+  "extension_pool": "first 20 by estimation liquidity_rank", "extension_n": 20,
+  "gamma": 15, "cap": 0.25, "K": 5, "time_limit_seconds": 120,
+  "support_reporting_threshold": 1e-8, "feasibility_tolerance": 1e-7
+}

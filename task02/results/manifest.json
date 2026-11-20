@@ -1,0 +1,111 @@
+{
+  "protocol": {
+    "data_version": "csi500_20261111T020022_current_v1",
+    "estimation_start": "2025-01-02",
+    "estimation_end": "2026-06-30",
+    "sigma_daily": 0.04,
+    "eta_main": 0.01,
+    "eta_grid": [
+      0,
+      0.0001,
+      0.001,
+      0.01,
+      0.1
+    ],
+    "extension_pool": "first 20 by estimation liquidity_rank",
+    "extension_n": 20,
+    "gamma": 15,
+    "cap": 0.25,
+    "K": 5,
+    "time_limit_seconds": 120,
+    "support_reporting_threshold": 1e-08,
+    "feasibility_tolerance": 1e-07
+  },
+  "periods": {
+    "anchor_date": "2024-12-31",
+    "data_version": "csi500_20261111T020022_current_v1",
+    "decision_date": "2026-06-30",
+    "entry_convention": "first July session close; first P&L is next close-to-close return",
+    "entry_executed": false,
+    "estimation_end": "2026-06-30",
+    "estimation_start": "2025-01-02",
+    "proposed_entry_date": "2026-07-01",
+    "proposed_first_return_date": "2026-07-02",
+    "test_end": "2026-11-10",
+    "test_start": "2026-07-01",
+    "validation_split": null
+  },
+  "inputs": {
+    "periods.json": "c7ae10de8155136ff34ec547ab3f42287480e85f11000edbd07bf7e1665dd7f0",
+    "calendar.csv": "5ef0080a0a30682459e6f890d6a10dfd74fc197a5307ce3c27cee087bd8ad5b7",
+    "model_assets.csv": "c2049d502945e91d6864deec8a76ab7764f132b36aa526d700d11805fadf23d1",
+    "model_returns_wide.csv": "dd810e5baf4e7ff5dd96695e999de164a39c74cdfe148a6013a62a9bd3a71129"
+  },
+  "code_sha256": {
+    "models.py": "df72f8238bb54eb894375825d9172422cb55b4c21a9e1ccad6738fcafa4e70e4",
+    "run.py": "89cee9030febac6268f0ff0127bb9bfada67be0473d78954fd97ccfc49e0d4bf",
+    "protocol.json": "be7dd94c67ee6020948dc16494ce7449261b0202f120f39ba83a20e979a947fc"
+  },
+  "python": "3.11.7",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "pyscipopt": "6.3.0",
+  "scip": 10.0,
+  "target": {
+    "theta_s": 0.4452292159499874,
+    "theta_a": 0.056482766880137605,
+    "r_c": 0.17781337579597187,
+    "eigen_min": 6.548606631246668e-05,
+    "eigen_max": 0.040317785123100414,
+    "condition": 615.6696743811752,
+    "symmetry_error": 0.0
+  },
+  "lambda_max": 1.3562134152910972,
+  "extension_solver_weights_in_export_order": {
+    "mv_continuous": [
+      -8.760797619912414e-11,
+      0.0275724322002125,
+      -8.82194035483339e-11,
+      -8.773971872207805e-11,
+      -8.910567138593552e-11,
+      0.19348359995559483,
+      0.15922094472785542,
+      -8.876775105317486e-11,
+      0.0392687164619032,
+      0.046270608412313695,
+      0.13289465039230997,
+      0.03251481372911037,
+      0.10986272219586858,
+      -8.913972477313502e-11,
+      -8.941942049653297e-11,
+      -8.940564939252085e-11,
+      -8.890509616522208e-11,
+      -8.916520287595945e-11,
+      0.25000000008805284,
+      0.00891151272425427
+    ],
+    "mv_cardinality": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.22180616757840743,
+      0.20646037616967375,
+      0.0,
+      0.0,
+      0.0,
+      0.1746148911329759,
+      0.0,
+      0.14711856511894292,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.25,
+      0.0
+    ]
+  },
+  "evaluation": "pending_task03"
+}
