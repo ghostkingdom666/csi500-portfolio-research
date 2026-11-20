@@ -1,0 +1,13 @@
+test_duplicate_columns (__main__.ModelChecks.test_duplicate_columns) ... ok
+test_hand_lasso (__main__.ModelChecks.test_hand_lasso) ... ok
+test_integer_vs_enumeration (__main__.ModelChecks.test_integer_vs_enumeration) ... ok
+test_invalid_inputs (__main__.ModelChecks.test_invalid_inputs) ... ok
+test_known_target (__main__.ModelChecks.test_known_target) ... ok
+test_real_three_stocks (__main__.ModelChecks.test_real_three_stocks) ... ok
+test_target_boundaries (__main__.ModelChecks.test_target_boundaries) ... ok
+test_zero (__main__.ModelChecks.test_zero) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.221s
+
+OK

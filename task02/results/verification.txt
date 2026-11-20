@@ -1,0 +1,7 @@
+l1_eta_0: verified 100 labelled weights, objective=10.2618864127
+l1_eta_0.0001: verified 100 labelled weights, objective=10.2622211328
+l1_eta_0.001: verified 100 labelled weights, objective=10.2652289047
+l1_eta_0.01: verified 100 labelled weights, objective=10.2948401603
+l1_eta_0.1: verified 100 labelled weights, objective=10.5448153741
+mv_continuous: verified 20 labelled weights, objective=-0.00195198073807
+mv_cardinality: verified 20 labelled weights, objective=-0.00181410813177
