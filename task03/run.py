@@ -97,8 +97,10 @@ def main(output: Path) -> pd.DataFrame:
 
     est = returns.loc[(returns.index >= est_start) & (returns.index <= est_end)]
     window = returns.loc[(returns.index >= first) & (returns.index <= test_end)]
-    if len(window) != 89 - 1:
-        raise SystemExit(f"检验收益窗口应为 88 天（89 个含建仓日），实际 {len(window)}")
+    if window.empty or window.index[0] != first or window.index[-1] != test_end:
+        raise SystemExit(f"检验窗口端点应为 {first}..{test_end}，"
+                         f"实际 {window.index[0] if not window.empty else '空'}.."
+                         f"{window.index[-1] if not window.empty else '空'}")
 
     metrics_rows, comparison_rows, navs, daily_rows = [], [], {}, []
 

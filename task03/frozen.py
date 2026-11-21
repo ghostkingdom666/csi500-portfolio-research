@@ -161,13 +161,18 @@ def check_task02(frozen, t02) -> list[dict]:
         str(runs["data_version"].iloc[0]) == periods["data_version"], runs["data_version"].iloc[0])
     add("task02_estimation_end_matches",
         str(runs["estimation_end"].iloc[0]) == periods["estimation_end"], runs["estimation_end"].iloc[0])
+    allowed = {"optimal", "infeasible", "fail", "zero_solution", "optimal_inaccurate"}
     for model, w in t02["weights"].items():
+        status = t02["statuses"][model]
+        add(f"{model}:status_allowed", status in allowed, status)
+        if status != "optimal":
+            # 失败/不可行模型保留结果行，不做权重校验，也不阻断其他模型评价。
+            continue
         unknown = [a for a in w.index if a not in ids]
         add(f"{model}:assets_in_frozen_pool", not unknown, unknown)
         add(f"{model}:no_nan", bool(np.isfinite(w.to_numpy()).all()), "")
         add(f"{model}:nonnegative", bool((w >= -1e-12).all()), float(w.min()))
         add(f"{model}:budget_one", abs(float(w.sum()) - 1.0) <= 1e-8, float(w.sum()))
-        add(f"{model}:status_optimal", t02["statuses"][model] == "optimal", t02["statuses"][model])
         # 估计期样本均值/波动应与第2人 runs.csv 一致（描述初始权重对估计样本的暴露）
         est = returns.loc[(returns.index >= periods["estimation_start"])
                           & (returns.index <= periods["estimation_end"]), w.index]

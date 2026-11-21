@@ -1,6 +1,6 @@
 {
   "task": "task03",
-  "generated_at": "2026-11-20T13:17:24+00:00",
+  "generated_at": "2026-11-21T11:54:37+00:00",
   "data_version": "csi500_20261111T020022_current_v1",
   "entry_date": "2026-07-01",
   "first_return_date": "2026-07-02",
@@ -78,8 +78,8 @@
   "code_sha256": {
     "evalcore.py": "bba63ab72a23eb4cc9d0368325c71acbf9eec8ca1de55a327d9055d629ca7b57",
     "benchmarks.py": "bb8a9017319633f8b2c86c723e2a07b977c488a5feb29e6ba3991b88384c6a69",
-    "frozen.py": "7e13b4b8ecca986f99222091315dba9c50a4658d92c67260b1ed593cadc1290d",
-    "run.py": "96553c06b26340c64782f4a3e732599e3bd86565ab846a179718abca5a1adc1c",
+    "frozen.py": "7bc01804843c3b30c22bd32b0c2142986a83a64ffd19d0fc938e2629c00997cb",
+    "run.py": "7c55fe6e402a051aba4fcbef62af4dfc67df2622ff3dd121249ae31dbe5906b2",
     "protocol.json": "0386db9e7ef187a8f97b4eaaa92d9516f7c99208478d000a80fe1cc29e4c46f2"
   },
   "environment": {
@@ -89,12 +89,12 @@
     "scipy": "1.18.0"
   },
   "outputs": {
-    "metrics.csv": "c9f0225fd09162225fd8041650ce81233004a0703a3d3420ed24876267a424df",
-    "comparison.csv": "627a3f64f03e75b60a8c8c3af8a620948c85344341af280329a844deafd3872a",
+    "metrics.csv": "e1ff8bb2f74557ed8954921491bcb0db46a4e92a1f534d79e3547872e3391014",
+    "comparison.csv": "b684571a692e32c959965eff1eea0f6b1f3db25488f0cece05d12122c003cd15",
     "nav.csv": "5455cc359e47592a9e3913dbfc358bce69e9a6c603f58e12357bfa154b72ef4d",
     "daily_returns.csv": "8cdcc514316805db8e7585eb79e666cb5109340f45621fcbaa90891c92ec881b",
     "weights_benchmarks.csv": "a3072b976932e549bc66e70a68883fe33500a36606e95d03c1216da23b7acf18",
-    "checks.txt": "463fe05156fad83f026299bb2302ea5d51a4b21cddb1566080859372cfcf170b"
+    "checks.txt": "c2b571e7b2f1433dfd957dd687f5f57a277fc181d65334b8b3207b1437638358"
   },
   "checks_passed": 76
 }
