@@ -1,0 +1,6 @@
+# 本机实测环境（macOS, Python 3.14.6）；任务3只做评价与基准求解
+numpy==2.4.6
+pandas==3.0.3
+scipy==1.18.0
+mpmath==1.3.0
+matplotlib==3.11.0

@@ -1,0 +1,36 @@
+{
+  "data_version": "csi500_20261111T020022_current_v1",
+  "preregistered_on": "2026-11-20",
+  "preregistration_note": "全部基准参数在本文件冻结后才首次评价检验期。sigma_max 与 loss_max 仅依据估计期统计（等权日波动 1.93%、等权 CVaR95 3.14%、CVaR99 4.29%）与任务卡建议量级确定，未查看任何检验期收益；冻结后不得按结果调整。",
+  "evaluation": {
+    "v0": 1.0,
+    "D": 252,
+    "rf": 0.0,
+    "ddof": 1,
+    "entry": "periods.proposed_entry_date 收盘建仓，V0=1",
+    "first_return": "periods.proposed_first_return_date 起按收盘到收盘计收益",
+    "holding": "一次建仓后持有，权重随价格漂移，不每日恢复比例",
+    "cost": "零成本假设，未模拟交易费用与冲击",
+    "annualization": "(V_end/V_0)^(D/n)-1；年化波动=sqrt(D)*日收益样本标准差；夏普=sqrt(D)*(日均超额/日标准差)"
+  },
+  "benchmarks": {
+    "equal": {"role": "main"},
+    "mv": {"sigma_max_daily": 0.03, "role": "main",
+           "note": "max mu'u s.t. u>=0, 1'u=1, sqrt(u'Sigma u)<=sigma_max，为风险硬约束"},
+    "cvar": [
+      {"alpha": 0.95, "loss_max": 0.03, "role": "main"},
+      {"alpha": 0.99, "loss_max": 0.045, "role": "sensitivity"}
+    ],
+    "var_heuristic": {
+      "alpha": 0.95, "loss_max": 0.03, "budget": 3000, "seeds": [0, 1, 2],
+      "role": "seed 0 为主情景；三个种子全部保留，不按检验表现挑选"
+    }
+  },
+  "risk_note": "sigma_max 是均值—方差基准的日频波动硬上限；loss_max 是日损失口径的 CVaR/VaR 限额；任务2的 sigma=0.04 是目标向量构造参数，不是硬风险约束。三者含义不同，数值相近也不得称为等风险。",
+  "reference": {
+    "index_code": "000905",
+    "return_type": "price_index",
+    "role": "市场参照曲线，不是组合策略，不参与五方法排名"
+  },
+  "tolerances": {"weight_sum": 1e-08, "nonneg": 1e-12, "risk": 1e-06}
+}
