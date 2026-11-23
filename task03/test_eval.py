@@ -154,6 +154,35 @@ def test_equal_weight():
     assert info["status"] == "optimal"
 
 
+def test_failed_status_is_preserved():
+    """上游 solver_failure 等状态不得阻断整批评价，且不校验空权重。"""
+    from frozen import check_task02
+
+    ids = ["A", "B"]
+    R = pd.DataFrame({"A": [0.01, -0.02, 0.03], "B": [0.0, 0.01, -0.01]},
+                     index=["d1", "d2", "d3"])
+    periods = {"data_version": "v-test", "estimation_start": "d1",
+               "estimation_end": "d2"}
+    w = pd.Series({"A": 0.5, "B": 0.5})
+    port = R.loc[["d1", "d2"]].to_numpy() @ w.to_numpy()
+    runs = pd.DataFrame([
+        {"model_id": "ok", "data_version": "v-test", "estimation_end": "d2",
+         "daily_mean_in_sample": float(port.mean()),
+         "daily_sd_in_sample": float(port.std(ddof=1)), "holdings": 2},
+        {"model_id": "bad", "data_version": "v-test", "estimation_end": "d2",
+         "daily_mean_in_sample": np.nan, "daily_sd_in_sample": np.nan,
+         "holdings": np.nan},
+    ])
+    t02 = {"weights": {"ok": w, "bad": pd.Series({"A": np.nan, "B": np.nan})},
+           "statuses": {"ok": "optimal", "bad": "solver_failure"}, "runs": runs}
+    checks = check_task02({"ids": ids, "returns": R, "periods": periods}, t02)
+    failed = [c for c in checks if not c["passed"]]
+    assert not failed, failed
+    names = [c["check"] for c in checks]
+    assert "bad:status_present" in names
+    assert not any(n.startswith("bad:budget") for n in names)
+
+
 if __name__ == "__main__":
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     for fn in tests:

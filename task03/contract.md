@@ -27,7 +27,7 @@
 | `asset_id` | 必须与 `model_returns_wide.csv` 列名一致，按标签对齐 |
 | `invested_weight` | 投入比例：非负、和为 1（容差 1e-8）；零权重行必须保留 |
 | `raw_coefficient` | **不得进入评价**；评价入口显式拒收 |
-| `status` | `optimal` / `infeasible` / `fail` / `zero_solution` / `optimal_inaccurate`；非 optimal 保留行、不出净值 |
+| `status` | 上游任意非空状态原样保留（如 `optimal`、`zero_solution`、`failed_kkt`、`solver_failure`、`lambda_max_zero`、`feasible_timelimit`、`infeasible`、`failed_residual`）；只有 `optimal` 进入权重校验与净值，非 optimal 保留空业绩行、不阻断整批 |
 
 `task02/results/runs.csv`：提供 `T/N`、`eta`、`lambda_value`、`sigma`、`gamma`、`cap`、`K`、`objective`、`solver`、`seconds`、KKT 残差与状态，用于 `comparison.csv` 关联，不参与净值计算。
 
@@ -103,7 +103,7 @@ $$
 - [ ] 建仓日 2026-07-01、首收益日 2026-07-02、截止 2026-11-10 与数据包一致；
 - [ ] 买入持有口径：两资产手算 1 → 1.05 → 1.10 通过；未误用固定权重逐日复利（那会得到 1.1025）；
 - [ ] 指标公式（累计、年化、波动、夏普、最大回撤）与任务卡 §3.2 一致；
-- [ ] 失败/不可行模型保留行，未从表中消失；
+- [ ] 失败状态原样保留：`solver_failure`/`zero_solution` 等不触发整批停止，空权重行不报 float 错误；
 - [ ] 抽算一个模型（建议 `l1_eta_0.01`）的净值与指标，与 `metrics.csv` 一致；
 - [ ] 确认任务3 未改动第 2 人权重：`task02/results/weights.csv` SHA256 =
       `fbe0d3e385cc1dc993c28a82610bd7ab8ae7d2df068591f545f2ab39a8a75bb8`。

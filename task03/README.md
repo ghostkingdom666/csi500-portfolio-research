@@ -45,7 +45,7 @@
 在仓库根目录（Python 3.12+，依赖 numpy/pandas/scipy/mpmath/matplotlib）：
 
 ```bash
-python task03/test_eval.py                 # 12 组人工可核对测试
+python task03/test_eval.py                 # 13 组人工可核对测试
 python task03/run.py --output task03/results   # 读取冻结数据与 task02 权重，重写结果
 python task03/verify.py                    # 独立复算净值、指标与任务2目标估计
 python task03/make_charts.py               # 由 nav.csv 重生成图表
@@ -69,7 +69,7 @@ python task03/make_charts.py               # 由 nav.csv 重生成图表
 
 ## 验证证据
 
-- 12 组测试：两资产买入持有 1→1.05→1.10、每日再平衡对照 1.1025、单资产、标签打乱对齐、权重和/负值/NaN/重复标签/缺资产、最大回撤含初始 1、零波动 Sharpe 空值、经验 VaR/CVaR 手算与并列值、CVaR 的 ζ 自由与不可行分支、MV 风险约束放松与不可行分支、VaR 启发式可复现；
+- 13 组测试：两资产买入持有 1→1.05→1.10、每日再平衡对照 1.1025、单资产、标签打乱对齐、权重和/负值/NaN/重复标签/缺资产、最大回撤含初始 1、零波动 Sharpe 空值、经验 VaR/CVaR 手算与并列值、CVaR 的 ζ 自由与不可行分支、MV 风险约束放松与不可行分支、VaR 启发式可复现；
 - 契约检查 76/76 通过，独立复算 51/51 通过；
 - 任务2 目标估计独立复现：θ_s=0.445229215949987、θ_a=0.0564827668801355、r_c=0.177813375795975、λ_max=1.356213415291119，与其 manifest 差异 <1e-11；
 - 任务2 权重文件 SHA256 与其 README 声明一致（`fbe0d3e3…`），本次未改动。
@@ -80,6 +80,17 @@ python task03/make_charts.py               # 由 nav.csv 重生成图表
 - **MV 全局性**：从等权与 5 个 Dirichlet 随机起点重解，目标值均为 0.0092618611、波动 3.000%、6 只持仓，未见更优解。
 - **数据合理性**：检验期中证500指数最差单日 −5.55%、年化波动 31.85%，与等权组合相关系数 0.977。个股日收益超 ±11% 的样本占 1.6%，其中 3 个落在收益窗口内的 10% 涨跌幅主板样本（600601.SH 两次、000737.SZ 一次），1 个在建仓日窗口外（601162.SH）。核查发现 `close_adj/close_raw` 比值在样本期内频繁小幅变动（日均绝对差 0.127%、p95 0.48%），并非只在除权日跳变，与严格后复权因子不一致；改用原始价格重算买入持有累计收益，比官方口径低 0.92–3.57 个百分点（等权 −31.55% vs −30.63%，ℓ1 −55.45% vs −53.09%），**方法排序不变**。该差异属第 1 人披露的“供应商复权代理”口径，建议数据负责人核验，本次结论对复权口径不敏感。
 - **复现性**：连续两次运行 `nav.csv`、`weights_benchmarks.csv`、`checks.txt` 哈希一致；`metrics.csv`、`comparison.csv` 含求解墙钟 `seconds`，文件哈希随机器变化，`run_manifest.json` 的 `outputs` 以当次运行文件为准。
+
+### 交叉复核与修复（2026-11-23）
+
+任务2 在 PR #2（base 为 `task03-benchmarks`）中独立复算了 7 个组合的逐日净值：89 个净值点、88 笔日收益与 `metrics.csv`/`comparison.csv` 一致，最大净值误差 <4×10⁻¹⁶，并复跑通过 12 组测试、76 项契约检查、51 项复算。复核提出两处失败行兼容性问题，均已修复：
+
+- `check_task02` 原先把 `solver_failure` 当未知状态并停止整批；现改为只要求状态非空、原样保留，仅 `optimal` 校验权重（`frozen.py`）。
+- `verify.py` 对空 `invested_weight` 调用 `float` 报错；现跳过失败行（`verify.py`）。
+- `verify.py` 的 `comparison:consistent_with_metrics` 对失败行做 NaN 比较会误报；现允许两侧同为空。
+- 新增回归测试 `test_failed_status_is_preserved`，测试数 12→13。
+
+用临时副本注入 `solver_failure` 后复核：`run.py` 正常产出（69 项检查，失败模型只保留状态行），失败模型在 `metrics.csv`/`comparison.csv` 保留状态与空业绩，`verify.py` 跳过该行并通过；唯一剩余的告警是权重文件哈希与交付不一致——这是注入导致的，属预期。
 
 ## 限制与未完成
 

@@ -161,10 +161,11 @@ def check_task02(frozen, t02) -> list[dict]:
         str(runs["data_version"].iloc[0]) == periods["data_version"], runs["data_version"].iloc[0])
     add("task02_estimation_end_matches",
         str(runs["estimation_end"].iloc[0]) == periods["estimation_end"], runs["estimation_end"].iloc[0])
-    allowed = {"optimal", "infeasible", "fail", "zero_solution", "optimal_inaccurate"}
     for model, w in t02["weights"].items():
-        status = t02["statuses"][model]
-        add(f"{model}:status_allowed", status in allowed, status)
+        status = str(t02["statuses"][model]).strip()
+        # 上游可能给出 solver_failure / failed_kkt / lambda_max_zero / feasible_timelimit 等
+        # 任意非空状态；任务3 只要求非空且原样保留，不因未知状态停止整批评价。
+        add(f"{model}:status_present", bool(status), status)
         if status != "optimal":
             # 失败/不可行模型保留结果行，不做权重校验，也不阻断其他模型评价。
             continue

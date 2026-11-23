@@ -85,6 +85,8 @@ def main() -> int:
     nav = pd.read_csv(OUT / "nav.csv", index_col=0)
     weights = {}
     for row in read_csv_rows(TASK02 / "results" / "weights.csv"):
+        if row["invested_weight"].strip() in ("", "None"):
+            continue  # 失败/不可行模型没有可投资权重，绩效行由 metrics.csv 保留
         weights.setdefault(row["model_id"], {})[row["asset_id"]] = float(row["invested_weight"])
     for row in read_csv_rows(OUT / "weights_benchmarks.csv"):
         weights.setdefault(row["model_id"], {})[row["asset_id"]] = float(row["invested_weight"])
@@ -155,10 +157,14 @@ def main() -> int:
 
     # 6) 比较表与指标表一致
     comp = pd.read_csv(OUT / "comparison.csv").set_index("model_id")
-    same = all(
-        abs(float(comp.loc[m, "cumulative_return"]) - float(metrics.loc[m, "cumulative_return"])) < 1e-12
-        for m in metrics.index
-    )
+
+    def same_value(a, b):
+        if pd.isna(a) and pd.isna(b):
+            return True
+        return (not pd.isna(a)) and (not pd.isna(b)) and abs(float(a) - float(b)) < 1e-12
+
+    same = all(same_value(comp.loc[m, "cumulative_return"], metrics.loc[m, "cumulative_return"])
+               for m in metrics.index)
     add("comparison:consistent_with_metrics", same, "")
 
     lines = [f"[{'PASS' if ok else 'FAIL'}] {name}" + (f" :: {detail}" if detail else "")

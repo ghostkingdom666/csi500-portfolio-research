@@ -18,7 +18,7 @@
 [PASS] test_missing_return_cells_zero :: 0
 [PASS] task02_data_version_matches :: csi500_20261111T020022_current_v1
 [PASS] task02_estimation_end_matches :: 2026-06-30
-[PASS] l1_eta_0:status_allowed :: optimal
+[PASS] l1_eta_0:status_present :: optimal
 [PASS] l1_eta_0:assets_in_frozen_pool :: []
 [PASS] l1_eta_0:no_nan
 [PASS] l1_eta_0:nonnegative :: 0.0
@@ -26,7 +26,7 @@
 [PASS] l1_eta_0:in_sample_daily_mean_matches :: 0.006910027754 vs 0.006910027754
 [PASS] l1_eta_0:in_sample_daily_sd_matches :: 0.021243149788 vs 0.021243149788
 [PASS] l1_eta_0:holdings_match :: 10 vs 10
-[PASS] l1_eta_0.0001:status_allowed :: optimal
+[PASS] l1_eta_0.0001:status_present :: optimal
 [PASS] l1_eta_0.0001:assets_in_frozen_pool :: []
 [PASS] l1_eta_0.0001:no_nan
 [PASS] l1_eta_0.0001:nonnegative :: 0.0
@@ -34,7 +34,7 @@
 [PASS] l1_eta_0.0001:in_sample_daily_mean_matches :: 0.006911126019 vs 0.006911126019
 [PASS] l1_eta_0.0001:in_sample_daily_sd_matches :: 0.021246526414 vs 0.021246526414
 [PASS] l1_eta_0.0001:holdings_match :: 10 vs 10
-[PASS] l1_eta_0.001:status_allowed :: optimal
+[PASS] l1_eta_0.001:status_present :: optimal
 [PASS] l1_eta_0.001:assets_in_frozen_pool :: []
 [PASS] l1_eta_0.001:no_nan
 [PASS] l1_eta_0.001:nonnegative :: 0.0
@@ -42,7 +42,7 @@
 [PASS] l1_eta_0.001:in_sample_daily_mean_matches :: 0.006921041398 vs 0.006921041398
 [PASS] l1_eta_0.001:in_sample_daily_sd_matches :: 0.021277037309 vs 0.021277037309
 [PASS] l1_eta_0.001:holdings_match :: 10 vs 10
-[PASS] l1_eta_0.01:status_allowed :: optimal
+[PASS] l1_eta_0.01:status_present :: optimal
 [PASS] l1_eta_0.01:assets_in_frozen_pool :: []
 [PASS] l1_eta_0.01:no_nan
 [PASS] l1_eta_0.01:nonnegative :: 0.0
@@ -50,7 +50,7 @@
 [PASS] l1_eta_0.01:in_sample_daily_mean_matches :: 0.007023726945 vs 0.007023726945
 [PASS] l1_eta_0.01:in_sample_daily_sd_matches :: 0.021595714491 vs 0.021595714491
 [PASS] l1_eta_0.01:holdings_match :: 11 vs 11
-[PASS] l1_eta_0.1:status_allowed :: optimal
+[PASS] l1_eta_0.1:status_present :: optimal
 [PASS] l1_eta_0.1:assets_in_frozen_pool :: []
 [PASS] l1_eta_0.1:no_nan
 [PASS] l1_eta_0.1:nonnegative :: 0.0
@@ -58,7 +58,7 @@
 [PASS] l1_eta_0.1:in_sample_daily_mean_matches :: 0.008258463054 vs 0.008258463054
 [PASS] l1_eta_0.1:in_sample_daily_sd_matches :: 0.025748992973 vs 0.025748992973
 [PASS] l1_eta_0.1:holdings_match :: 9 vs 9
-[PASS] mv_continuous:status_allowed :: optimal
+[PASS] mv_continuous:status_present :: optimal
 [PASS] mv_continuous:assets_in_frozen_pool :: []
 [PASS] mv_continuous:no_nan
 [PASS] mv_continuous:nonnegative :: 0.0
@@ -66,7 +66,7 @@
 [PASS] mv_continuous:in_sample_daily_mean_matches :: 0.005985388978 vs 0.005985388978
 [PASS] mv_continuous:in_sample_daily_sd_matches :: 0.023190251514 vs 0.023190251514
 [PASS] mv_continuous:holdings_match :: 10 vs 10
-[PASS] mv_cardinality:status_allowed :: optimal
+[PASS] mv_cardinality:status_present :: optimal
 [PASS] mv_cardinality:assets_in_frozen_pool :: []
 [PASS] mv_cardinality:no_nan
 [PASS] mv_cardinality:nonnegative :: 0.0
