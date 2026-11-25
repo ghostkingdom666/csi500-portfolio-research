@@ -1,0 +1,3 @@
+portfolio_id,alpha,empirical_var,empirical_cvar,daily_sd,n_days,n_assets,estimation_start,estimation_end,unit
+equal,0.95,0.03140499677755566,0.04261953609510524,0.019334917763303882,359,100,2025-01-02,2026-06-30,decimal_daily_loss
+equal,0.99,0.04289323905196013,0.06847045412617263,0.019334917763303882,359,100,2025-01-02,2026-06-30,decimal_daily_loss

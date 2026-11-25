@@ -1,0 +1,20 @@
+{
+  "response_count": 28,
+  "response_hashes_match": true,
+  "positive_coefficients": true,
+  "normalized_sum": 0.9999999999999998,
+  "raw": {
+    "anchor_and21_identical_return_dates": true,
+    "positive_finite_closes": true,
+    "benchmark_rebalanced_buyhold_equal": true,
+    "buyhold_endpoint_matches_weighted_endpoint": true,
+    "original_claim_outside_print_rounding_bounds": true
+  },
+  "hfq": {
+    "anchor_and21_identical_return_dates": true,
+    "positive_finite_closes": true,
+    "benchmark_rebalanced_buyhold_equal": true,
+    "buyhold_endpoint_matches_weighted_endpoint": true,
+    "original_claim_outside_print_rounding_bounds": true
+  }
+}

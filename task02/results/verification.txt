@@ -1,3 +1,5 @@
+CV: verified 10 shuffled folds, 1000 candidates, lambda=0.222222222222
+l1_cv: verified 100 labelled weights, objective=10.6863445217
 l1_eta_0: verified 100 labelled weights, objective=10.2618864127
 l1_eta_0.0001: verified 100 labelled weights, objective=10.2622211328
 l1_eta_0.001: verified 100 labelled weights, objective=10.2652289047

@@ -1,0 +1,122 @@
+{
+  "scope": "Independent read-only original-paper and printed-portfolio check; no project files modified",
+  "comparisons": [
+    {
+      "dimension": "universe",
+      "paper": "Current CSI300 constituents retrieved from JY: 280 available, complete-case 278",
+      "current": "Current CSI500 constituents; estimation-liquidity-selected 100-stock model panel",
+      "evidence": "PDF original p6/physical p6; acquire.py config and task02/run.py inputs",
+      "classification": "changed_sample"
+    },
+    {
+      "dimension": "date",
+      "paper": "Train >=2023-07-01 and <2025-04-01; test >=2025-04-01 through data query end 2025-05-01 (April 1-30 sessions)",
+      "current": "Train 2025-01-02..2026-06-30; July 1 close entry, first P&L July 2..November 10, 2026",
+      "evidence": "PDF p6-7, original p21/physical p15; periods.json",
+      "classification": "changed_sample"
+    },
+    {
+      "dimension": "return_unit",
+      "paper": "JY return_pct /100; decimal daily simple returns; underlying corporate-action definition not retained",
+      "current": "Decimal daily simple returns from delivered Eastmoney hfq close pct_change",
+      "evidence": "PDF p7 and original p21/physical p15; data acquisition code and task03/evalcore.py docstring",
+      "classification": "unit_matches_definition_requires_caveat"
+    },
+    {
+      "dimension": "covariance",
+      "paper": "np.cov(X_train,rowvar=False) + 1e-6 * I before theta_s inverse, in each CV fold and full refit; validation covariance has no ridge",
+      "current": "models.py:27 uses sample covariance then :31 solve without ridge",
+      "evidence": "PDF p8 and original p22-23/physical p16-17; models.py:22-31",
+      "classification": "missing_original_detail_root_quantifying"
+    },
+    {
+      "dimension": "CV",
+      "paper": "KFold(n_splits=10, shuffle=True, random_state=42); np.linspace(0,10,100), endpoints inclusive in code; raw beta validation variance distance to sigma^2; ties update <=; mean of fold best lambdas",
+      "current": "cross_validation.py reproduces same folds/grid/raw-risk criterion/largest-lambda tie/mean aggregation; filters zero/failed noninvestable fits",
+      "evidence": "PDF p7, original p21-23/physical p15-17; cross_validation.py:17-104",
+      "classification": "restored_original_method_with_explicit_failure_guards"
+    },
+    {
+      "dimension": "lambda_result",
+      "paper": "Fold lambdas .4040,.4040,.5050,.3030,.3030,.5050,.3030,.5050,.5050,.5050; mean .4141 (rounded)",
+      "current": "Current frozen sample lambda .2222222222",
+      "evidence": "PDF p9 Table 1; current task02 results",
+      "classification": "sample_dependent_result_not_parameter_to_copy"
+    },
+    {
+      "dimension": "theta_numerics",
+      "paper": "Direct scipy.integrate.quad incomplete-beta integral and powers; unregularized objective after ridge target construction",
+      "current": "scipy.special.betainc/betaln log-domain formula for same analytic expression; finite/singularity guards",
+      "evidence": "PDF original p21-23/physical p15-17; models.py:8-36",
+      "classification": "numerical_implementation_difference_root_quantifying"
+    },
+    {
+      "dimension": "solver",
+      "paper": "cvxpy nonnegative sum_squares + lambda*norm1; default problem.solve() solver unspecified",
+      "current": "Equivalent nonnegative L1 solved as scipy.nnls shifted response with explicit KKT checks",
+      "evidence": "PDF p8/original p22-23; models.py:39-70",
+      "classification": "solver_change_same_objective_subject_to_numerics"
+    },
+    {
+      "dimension": "threshold_normalization",
+      "paper": "Set coefficients <=.0001 to 0; then weights_one=weights/sum(weights); raw coeff sum of printed14=5.3547",
+      "current": "run.py:103-105 normalizes NNLS coefficients directly; reporting threshold=1e-8",
+      "evidence": "PDF p8 and original p24/physical p18; run.py:103-105",
+      "classification": "missing_original_detail_root_quantifying"
+    },
+    {
+      "dimension": "entry",
+      "paper": "Includes April 1 daily return; implied March 31 closing valuation anchor; no explicit executed-trade convention",
+      "current": "Explicit July 1 close entry means July 1 return excluded, first return July 2",
+      "evidence": "PDF p7-8 original p21,24; periods.json and task03 contract",
+      "classification": "changed_entry_convention"
+    },
+    {
+      "dimension": "rebalancing",
+      "paper": "portfolio_returns=test_data@weights_one each day; cumprod(1+portfolio_returns), i.e. implicit daily constant-weight rebalancing",
+      "current": "task03/evalcore.py:56-69 computes one initial position then drifting weights; rebalanced diagnostic separate :72-79",
+      "evidence": "PDF p8/original p24; evalcore.py:56-79",
+      "classification": "changed_evaluation_policy_root_quantifying"
+    },
+    {
+      "dimension": "annualization",
+      "paper": "Reported 5.51% monthly -> (1.0551)^12-1=90.337112%; annualization formula itself not printed; test has 21 return sessions so 252/21=12 coincides",
+      "current": "NAV geometric annualization (V_end/V0)^(252/n)-1 over 88 actual test return sessions",
+      "evidence": "PDF p9; evalcore.py:82-96; public reconstruction verifies original21; current task03/results/metrics.csv n_days=88",
+      "classification": "different_time_horizon_not_missing_alpha"
+    },
+    {
+      "dimension": "Sharpe",
+      "paper": "Uses monthly rf=(1.015)^(1/12)-1 subtracted from daily mean, no sqrt252 scaling; baseline code reuses main-model average_return",
+      "current": "Annualized daily Sharpe sqrt252*(dailymean-rf/252)/daily_sd, rf=0 assumption",
+      "evidence": "PDF p9/original p25-26/physical p19-20; evalcore.py:96 and task03/protocol.json",
+      "classification": "original_metric_issue_and_changed_metric_policy"
+    },
+    {
+      "dimension": "risk_guarantee",
+      "paper": "Nonnegative L1 objective has no direct hard invested-weight variance constraint; CV raw-risk calibration precedes normalization; paper narrative calls sigma maximum sd",
+      "current": "Protocol explicitly says sigma=.04 is target-vector parameter and does not guarantee invested/future risk",
+      "evidence": "PDF p6,p8,p9; current protocol",
+      "classification": "original_interpretation_issue_not_a_missing_constraint"
+    },
+    {
+      "dimension": "portfolio_structure",
+      "paper": "14 coefficients after threshold; 3 bank stocks weight43.15835%; max24.61949%; top3 53.44277%; no names overlap current7",
+      "current": "7 current l1_cv holdings; largest 603256.SH26.71366%; top3 64.29466%",
+      "evidence": "PDF p9 Table2; paper-14-weights.csv and current weights snapshot sha",
+      "classification": "changed_allocation_from_changed_sample"
+    }
+  ],
+  "page_map": {
+    "1-14": "physical page equals original page",
+    "15-23": "physical page +6 equals original page"
+  },
+  "unverified": [
+    "Original 278-asset JY panel and exact corporate-action definition unavailable",
+    "Original original database query/credentials intentionally excluded and not accessed",
+    "Full optimizer reproduction on original estimation sample not attempted",
+    "Exact 5.51%, original per-fold solve outputs and full-precision original coefficients unavailable",
+    "No causal attribution of discrepancy to a particular original-data defect or misconduct"
+  ],
+  "original_results_baseline_warning": "PDF original p26 baseline Sharpe retains average_return from main; original p27-28 CVaR metrics also retain baseline variables and print cumulative_returns rather than cumulative_return. These code issues limit cross-model ranking claims."
+}

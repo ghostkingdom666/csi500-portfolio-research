@@ -1,0 +1,100 @@
+COMMAND: task02/test_models.py
+test_duplicate_columns (__main__.ModelChecks.test_duplicate_columns) ... ok
+test_hand_lasso (__main__.ModelChecks.test_hand_lasso) ... ok
+test_integer_vs_enumeration (__main__.ModelChecks.test_integer_vs_enumeration) ... ok
+test_invalid_inputs (__main__.ModelChecks.test_invalid_inputs) ... ok
+test_known_target (__main__.ModelChecks.test_known_target) ... ok
+test_real_three_stocks (__main__.ModelChecks.test_real_three_stocks) ... ok
+test_target_boundaries (__main__.ModelChecks.test_target_boundaries) ... ok
+test_zero (__main__.ModelChecks.test_zero) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.125s
+
+OK
+
+COMMAND: task02/test_cross_validation.py
+l1_cv optimal 7 10.70156761387482
+l1_eta_0 optimal 10 10.261886412660317
+l1_eta_0.0001 optimal 10 10.26222113281599
+l1_eta_0.001 optimal 10 10.265228904695595
+l1_eta_0.01 optimal 11 10.294840160291068
+l1_eta_0.1 optimal 9 10.544815374096624
+mv_continuous optimal 10 -0.0019519807380670284
+mv_cardinality optimal 5 -0.001814108131768538
+CV: verified 10 shuffled folds, 1000 candidates, lambda=0.232323232323
+l1_cv: verified 100 labelled weights, objective=10.7015676139
+l1_eta_0: verified 100 labelled weights, objective=10.2618864127
+l1_eta_0.0001: verified 100 labelled weights, objective=10.2622211328
+l1_eta_0.001: verified 100 labelled weights, objective=10.2652289047
+l1_eta_0.01: verified 100 labelled weights, objective=10.2948401603
+l1_eta_0.1: verified 100 labelled weights, objective=10.5448153741
+mv_continuous: verified 20 labelled weights, objective=-0.00195198073807
+mv_cardinality: verified 20 labelled weights, objective=-0.00181410813177
+test_all_zero_candidates_fail_instead_of_exporting_allocation (__main__.CrossValidationChecks.test_all_zero_candidates_fail_instead_of_exporting_allocation) ... ok
+test_determinism_and_raw_invested_risks_are_distinct (__main__.CrossValidationChecks.test_determinism_and_raw_invested_risks_are_distinct) ... ok
+test_failed_candidates_do_not_break_successful_export_verification (__main__.CrossValidationChecks.test_failed_candidates_do_not_break_successful_export_verification) ... ok
+test_invalid_grids_and_insufficient_fold_samples_fail (__main__.CrossValidationChecks.test_invalid_grids_and_insufficient_fold_samples_fail) ... ok
+test_one_asset_scores_match_closed_form_raw_variance (__main__.CrossValidationChecks.test_one_asset_scores_match_closed_form_raw_variance) ... ok
+test_original_shuffle_and_exhaustive_disjoint_folds (__main__.CrossValidationChecks.test_original_shuffle_and_exhaustive_disjoint_folds) ... ok
+test_runner_exports_cv_main_and_preserves_eta_sensitivity (__main__.CrossValidationChecks.test_runner_exports_cv_main_and_preserves_eta_sensitivity) ... ok
+test_validation_rows_cannot_enter_fold_target (__main__.CrossValidationChecks.test_validation_rows_cannot_enter_fold_target) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 30.107s
+
+OK
+
+COMMAND: task03/test_eval.py
+test_buy_and_hold OK
+test_cvar_lp OK
+test_equal_weight OK
+test_estimation_risk_statistics_are_labeled_separately OK
+test_failed_status_is_preserved OK
+test_feasible_heuristic_status_validates_real_weights OK
+test_label_alignment OK
+test_metrics OK
+test_mv OK
+test_rebalanced OK
+test_run_exports_risks_and_preserves_heuristic_and_failure_states OK
+test_single_asset OK
+test_task02_rejects_delivery_without_l1_cv OK
+test_task02_rejects_different_weight_and_run_model_sets OK
+test_task02_rejects_mixed_statuses_inside_weight_rows OK
+test_task02_rejects_weight_and_run_status_mismatch OK
+test_var_cvar_hand OK
+test_var_heuristic OK
+test_var_warm_start_preserves_known_feasible_solution OK
+test_verify_detects_task02_provenance_drift OK
+test_weight_validation OK
+test_zero_vol_sharpe OK
+
+全部 22 组测试通过
+
+COMMAND: task03/test_simple_baselines.py
+test_gmv_and_inverse_volatility_hand_solution OK
+test_invalid_history_returns_and_k_are_rejected OK
+test_inverse_volatility_zero_vol_is_an_explicit_failure OK
+test_low_volatility_uses_only_last_60_days OK
+test_momentum_exact_boundaries_and_skipped_recent_days OK
+test_real_end_to_end_rules_dates_provenance_and_independent_verification OK
+test_top20_ties_are_broken_by_asset_id_after_column_reordering OK
+
+All 7 groups passed
+
+COMMAND: analysis/test_portfolio_diagnostics.py
+test_alignment_rejects_missing_or_unknown_main_labels (__main__.DiagnosticChecks.test_alignment_rejects_missing_or_unknown_main_labels) ... ok
+test_budget_roundoff_is_reconciled_explicitly (__main__.DiagnosticChecks.test_budget_roundoff_is_reconciled_explicitly) ... ok
+test_monthly_blocks_compound_and_include_initial_capital (__main__.DiagnosticChecks.test_monthly_blocks_compound_and_include_initial_capital) ... ok
+test_nav_reconciliation_checks_dates_and_absolute_tolerance (__main__.DiagnosticChecks.test_nav_reconciliation_checks_dates_and_absolute_tolerance) ... ok
+test_negative_contributions_and_invalid_allocation (__main__.DiagnosticChecks.test_negative_contributions_and_invalid_allocation) ... ok
+test_original_covariance_ridge_is_applied_before_theta (__main__.DiagnosticChecks.test_original_covariance_ridge_is_applied_before_theta) ... ok
+test_original_threshold_is_inclusive_and_renormalized (__main__.DiagnosticChecks.test_original_threshold_is_inclusive_and_renormalized) ... ok
+test_paper_cv_matches_one_asset_closed_form_and_original_zero_scoring (__main__.DiagnosticChecks.test_paper_cv_matches_one_asset_closed_form_and_original_zero_scoring) ... ok
+test_stock_contributions_sum_to_buy_and_hold_return (__main__.DiagnosticChecks.test_stock_contributions_sum_to_buy_and_hold_return) ... ok
+test_unadjusted_price_diagnostic_requires_the_entry_anchor (__main__.DiagnosticChecks.test_unadjusted_price_diagnostic_requires_the_entry_anchor) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.047s
+
+OK

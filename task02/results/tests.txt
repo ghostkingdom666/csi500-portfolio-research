@@ -1,3 +1,4 @@
+COMMAND: task02/test_models.py
 test_duplicate_columns (__main__.ModelChecks.test_duplicate_columns) ... ok
 test_hand_lasso (__main__.ModelChecks.test_hand_lasso) ... ok
 test_integer_vs_enumeration (__main__.ModelChecks.test_integer_vs_enumeration) ... ok
@@ -8,6 +9,38 @@ test_target_boundaries (__main__.ModelChecks.test_target_boundaries) ... ok
 test_zero (__main__.ModelChecks.test_zero) ... ok
 
 ----------------------------------------------------------------------
-Ran 8 tests in 0.221s
+Ran 8 tests in 0.125s
+
+OK
+
+COMMAND: task02/test_cross_validation.py
+l1_cv optimal 7 10.70156761387482
+l1_eta_0 optimal 10 10.261886412660317
+l1_eta_0.0001 optimal 10 10.26222113281599
+l1_eta_0.001 optimal 10 10.265228904695595
+l1_eta_0.01 optimal 11 10.294840160291068
+l1_eta_0.1 optimal 9 10.544815374096624
+mv_continuous optimal 10 -0.0019519807380670284
+mv_cardinality optimal 5 -0.001814108131768538
+CV: verified 10 shuffled folds, 1000 candidates, lambda=0.232323232323
+l1_cv: verified 100 labelled weights, objective=10.7015676139
+l1_eta_0: verified 100 labelled weights, objective=10.2618864127
+l1_eta_0.0001: verified 100 labelled weights, objective=10.2622211328
+l1_eta_0.001: verified 100 labelled weights, objective=10.2652289047
+l1_eta_0.01: verified 100 labelled weights, objective=10.2948401603
+l1_eta_0.1: verified 100 labelled weights, objective=10.5448153741
+mv_continuous: verified 20 labelled weights, objective=-0.00195198073807
+mv_cardinality: verified 20 labelled weights, objective=-0.00181410813177
+test_all_zero_candidates_fail_instead_of_exporting_allocation (__main__.CrossValidationChecks.test_all_zero_candidates_fail_instead_of_exporting_allocation) ... ok
+test_determinism_and_raw_invested_risks_are_distinct (__main__.CrossValidationChecks.test_determinism_and_raw_invested_risks_are_distinct) ... ok
+test_failed_candidates_do_not_break_successful_export_verification (__main__.CrossValidationChecks.test_failed_candidates_do_not_break_successful_export_verification) ... ok
+test_invalid_grids_and_insufficient_fold_samples_fail (__main__.CrossValidationChecks.test_invalid_grids_and_insufficient_fold_samples_fail) ... ok
+test_one_asset_scores_match_closed_form_raw_variance (__main__.CrossValidationChecks.test_one_asset_scores_match_closed_form_raw_variance) ... ok
+test_original_shuffle_and_exhaustive_disjoint_folds (__main__.CrossValidationChecks.test_original_shuffle_and_exhaustive_disjoint_folds) ... ok
+test_runner_exports_cv_main_and_preserves_eta_sensitivity (__main__.CrossValidationChecks.test_runner_exports_cv_main_and_preserves_eta_sensitivity) ... ok
+test_validation_rows_cannot_enter_fold_target (__main__.CrossValidationChecks.test_validation_rows_cannot_enter_fold_target) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 30.107s
 
 OK

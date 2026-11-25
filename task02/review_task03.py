@@ -1,6 +1,7 @@
 """Audit task 02 outcomes against task 03 exports using frozen price ratios."""
 import csv
 import hashlib
+import json
 import math
 import statistics
 from collections import defaultdict
@@ -18,10 +19,12 @@ def rows(path):
 
 def audit():
     weight_file = ROOT / "task02" / "results" / "weights.csv"
-    assert hashlib.sha256(weight_file.read_bytes()).hexdigest() == (
-        "fbe0d3e385cc1dc993c28a82610bd7ab8ae7d2df068591f545f2ab39a8a75bb8")
+    manifest = json.loads((ROOT/"task02/results/manifest.json").read_text(encoding="utf-8"))
+    assert hashlib.sha256(weight_file.read_bytes()).hexdigest() == manifest["outputs"]["weights.csv"]
     weights = defaultdict(dict)
     for row in rows(weight_file):
+        if row["status"] != "optimal":
+            continue
         group = weights[row["model_id"]]
         assert row["asset_id"] not in group
         group[row["asset_id"]] = float(row["invested_weight"])
@@ -41,7 +44,8 @@ def audit():
         price[d][a] = float(row["close_adj"])
     nav = {r["date"]:r for r in rows(RESULTS/"nav.csv")}
     daily = {(r["date"],r["model_id"]):float(r["gross_return"]) for r in rows(RESULTS/"daily_returns.csv")}
-    assert list(nav) == days and len(weights) == 7 and len(assets) == 100
+    expected = {r["model_id"] for r in rows(ROOT/"task02/results/runs.csv") if r["status"] == "optimal"}
+    assert list(nav) == days and set(weights) == expected and "l1_cv" in weights and len(assets) == 100
     tables = [{r["model_id"]:r for r in rows(RESULTS/name)} for name in ["metrics.csv","comparison.csv"]]
     for model, group in weights.items():
         # Use the exported weights as-is; the entry NAV is the agreed unit of account.
@@ -61,7 +65,7 @@ def audit():
             assert row["status"] == "optimal" and int(row["n_days"]) == 88
             assert all(abs(value-float(row[key])) < 1e-8 for key,value in values.items())
         print(f"{model}: first={path[1]:.9f} final={path[-1]:.9f} drawdown={values['max_drawdown']:.9f} max_nav_error={error:.2g}")
-    print("PASS: 100 entry bars, 7 strategies, 89 NAV dates, 88 returns per strategy")
+    print(f"PASS: 100 entry bars, {len(weights)} strategies, 89 NAV dates, 88 returns per strategy")
 
 
 if __name__ == "__main__":

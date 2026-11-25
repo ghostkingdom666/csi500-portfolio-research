@@ -1,0 +1,50 @@
+[
+  {
+    "name": "csi500",
+    "symbol": "sh000905",
+    "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh000905%2Cday%2C2026-06-30%2C2026-11-10%2C1000%2C",
+    "retrieved_at": "2026-11-25T17:34:56.127914+00:00",
+    "sha256": "7b7b2560d3ff88affd9698bd12f4fa673c0446cc61ddb1b2ecfae2b4af05afc4",
+    "rows": 90
+  },
+  {
+    "name": "csi300",
+    "symbol": "sh000300",
+    "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh000300%2Cday%2C2026-06-30%2C2026-11-10%2C1000%2C",
+    "retrieved_at": "2026-11-25T17:34:56.120257+00:00",
+    "sha256": "50f04f720d5f1cd961019b50a0a52db71d325bae282dd50c57f8c0415776a76c",
+    "rows": 90
+  },
+  {
+    "name": "sse_composite",
+    "symbol": "sh000001",
+    "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh000001%2Cday%2C2026-06-30%2C2026-11-10%2C1000%2C",
+    "retrieved_at": "2026-11-25T17:34:56.136905+00:00",
+    "sha256": "77c3311c8dafdd4edcc3d342f1f5526f171862869bf114495600a43398c7e9a6",
+    "rows": 90
+  },
+  {
+    "name": "sz_component",
+    "symbol": "sz399001",
+    "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sz399001%2Cday%2C2026-06-30%2C2026-11-10%2C1000%2C",
+    "retrieved_at": "2026-11-25T17:34:56.149395+00:00",
+    "sha256": "08c4d04ffdb0adeda01ef17354e07bf8325ca385c96e981ff0a69f270ad27d0c",
+    "rows": 90
+  },
+  {
+    "name": "chinext",
+    "symbol": "sz399006",
+    "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sz399006%2Cday%2C2026-06-30%2C2026-11-10%2C1000%2C",
+    "retrieved_at": "2026-11-25T17:34:56.245004+00:00",
+    "sha256": "d1b6b7b8cbcd42f0a416b329455298ec0fcb59cd4ced23d19519e0c2277ddd10",
+    "rows": 90
+  },
+  {
+    "name": "csi1000",
+    "symbol": "sh000852",
+    "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh000852%2Cday%2C2026-06-30%2C2026-11-10%2C1000%2C",
+    "retrieved_at": "2026-11-25T17:34:56.272284+00:00",
+    "sha256": "a6381a35d6dc2420e4ee974909a40b47b7bcce6339a0a8ea81d79c6d3c6cc810",
+    "rows": 90
+  }
+]

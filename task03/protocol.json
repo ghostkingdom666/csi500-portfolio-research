@@ -1,7 +1,7 @@
 {
   "data_version": "csi500_20261111T020022_current_v1",
   "preregistered_on": "2026-11-20",
-  "preregistration_note": "全部基准参数在本文件冻结后才首次评价检验期。sigma_max 与 loss_max 仅依据估计期统计（等权日波动 1.93%、等权 CVaR95 3.14%、CVaR99 4.29%）与任务卡建议量级确定，未查看任何检验期收益；冻结后不得按结果调整。",
+  "preregistration_note": "保留 2026-11-20 原协议日期与风险限额，不在本次修订中重新声明事前登记。原说明误将等权 VaR95 3.14%、VaR99 4.29% 写成 CVaR；2026-11-26 按估计期损失重算更正。该错误不能支持原有 CVaR 限额依据；保留限额作为原有设定，并未根据检验期收益调参。",
   "evaluation": {
     "v0": 1.0,
     "D": 252,
@@ -14,23 +14,109 @@
     "annualization": "(V_end/V_0)^(D/n)-1；年化波动=sqrt(D)*日收益样本标准差；夏普=sqrt(D)*(日均超额/日标准差)"
   },
   "benchmarks": {
-    "equal": {"role": "main"},
-    "mv": {"sigma_max_daily": 0.03, "role": "main",
-           "note": "max mu'u s.t. u>=0, 1'u=1, sqrt(u'Sigma u)<=sigma_max，为风险硬约束"},
+    "equal": {
+      "role": "main"
+    },
+    "mv": {
+      "sigma_max_daily": 0.03,
+      "role": "main",
+      "note": "max mu'u s.t. u>=0, 1'u=1, sqrt(u'Sigma u)<=sigma_max，为风险硬约束"
+    },
     "cvar": [
-      {"alpha": 0.95, "loss_max": 0.03, "role": "main"},
-      {"alpha": 0.99, "loss_max": 0.045, "role": "sensitivity"}
+      {
+        "alpha": 0.95,
+        "loss_max": 0.03,
+        "role": "main"
+      },
+      {
+        "alpha": 0.99,
+        "loss_max": 0.045,
+        "role": "sensitivity"
+      }
     ],
     "var_heuristic": {
-      "alpha": 0.95, "loss_max": 0.03, "budget": 3000, "seeds": [0, 1, 2],
-      "role": "seed 0 为主情景；三个种子全部保留，不按检验表现挑选"
+      "alpha": 0.95,
+      "loss_max": 0.03,
+      "budget": 3000,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "role": "seed 0 为主情景；三个种子全部保留，不按检验表现挑选",
+      "warm_start_ids": [
+        "cvar_a95",
+        "cvar_a99"
+      ],
+      "candidate_order": "equal, all single-asset vertices, available configured CVaR warm starts, then Dirichlet(1) random points",
+      "budget_note": "budget 是总候选数，random_budget=budget-1-N-可用warm start数；修订记录见 revisions，未按检验期收益选择种子或限额。"
+    },
+    "gmv": {
+      "role": "main",
+      "estimation": "full_359_return_days",
+      "covariance_ddof": 1,
+      "return_target": null,
+      "constraints": "long-only; full investment",
+      "objective": "min u'Sigma u"
+    },
+    "inverse_volatility": {
+      "role": "main",
+      "estimation": "full_359_return_days",
+      "volatility_ddof": 1,
+      "rule": "weight proportional to 1/sample_sd",
+      "zero_or_nonfinite_volatility": "fail; do not silently exclude assets"
+    },
+    "momentum_top20": {
+      "role": "main",
+      "k": 20,
+      "lookback": 126,
+      "skip": 21,
+      "score": "prod(1+R[-126:-21])-1",
+      "sort": "score descending, asset_id lexicographic ascending",
+      "allocation": "selected 20 equal weight; all 100 asset rows retained"
+    },
+    "low_volatility_top20": {
+      "role": "main",
+      "k": 20,
+      "lookback": 60,
+      "ddof": 1,
+      "score": "sample_sd(R[-60:], ddof=1)",
+      "sort": "score ascending, asset_id lexicographic ascending",
+      "allocation": "selected 20 equal weight; all 100 asset rows retained"
     }
   },
   "risk_note": "sigma_max 是均值—方差基准的日频波动硬上限；loss_max 是日损失口径的 CVaR/VaR 限额；任务2的 sigma=0.04 是目标向量构造参数，不是硬风险约束。三者含义不同，数值相近也不得称为等风险。",
   "reference": {
     "index_code": "000905",
     "return_type": "price_index",
-    "role": "市场参照曲线，不是组合策略，不参与五方法排名"
+    "role": "市场参照曲线，不是组合策略，不参与九方法排名"
   },
-  "tolerances": {"weight_sum": 1e-08, "nonneg": 1e-12, "risk": 1e-06}
+  "tolerances": {
+    "weight_sum": 1e-08,
+    "nonneg": 1e-12,
+    "risk": 1e-06
+  },
+  "revisions": [
+    {
+      "date": "2026-11-26",
+      "kind": "retrospective_correction",
+      "changes": [
+        "纠正等权 VaR/CVaR 标签与数值，动态输出 risk_statistics.csv",
+        "保持原风险限额与 3000 总候选预算；加入估计期 CVaR95/99 解作为确定性 warm starts",
+        "VaR 成功仅标 feasible_heuristic，未找到可行候选标 no_feasible_candidate；不声称最优性或不可行证明"
+      ],
+      "risk_statistics_note": "估计期等权 VaR95=3.1404997%、CVaR95=4.2619536%、VaR99=4.2893239%、CVaR99=6.8470454%；以每次动态计算输出为准。"
+    },
+    {
+      "date": "2026-11-26",
+      "kind": "retrospective_fixed_baseline_addition",
+      "changes": [
+        "用户授权回溯新增GMV、波动率倒数、动量Top20和低波动Top20，全部固定为主比较",
+        "固定使用同一100股票池、2025-01-02至2026-06-30估计数据；不读取建仓日或检验期计算信号和权重",
+        "参数126/21/60/20沿用既定baseline建议，不按检验期结果调整；不宣称新增方法事前登记",
+        "2026-07-01收盘一次建仓，2026-07-02至2026-11-10共88收益日买入持有、零成本，与l1_cv共同比较"
+      ],
+      "signal_note": "动量为单次横截面排序建仓，不是月度轮动；low-vol窗口含估计期最后60个收益日。"
+    }
+  ]
 }

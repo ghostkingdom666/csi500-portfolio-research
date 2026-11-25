@@ -1,0 +1,526 @@
+{
+  "source_provider": "Tencent public fqkline endpoint",
+  "anchor": "2025-03-31",
+  "return_window": "2025-04-01 through 2025-04-30",
+  "raw_sum": 5.354700000000001,
+  "decimal_coefficient_rounding_half_width": 5e-05,
+  "claimed": {
+    "cumulative_return": 0.0551,
+    "daily_mean": 0.00265,
+    "daily_sd": 0.0137,
+    "sharpe": 0.1023,
+    "annual_return": 0.9034
+  },
+  "normalization": {
+    "max_weight": 0.2461949315554559,
+    "hhi": 0.13505375677297224,
+    "effective_holdings": 7.404458964299806,
+    "top3_weight": 0.5344276990307579,
+    "top5_weight": 0.7358021924664312
+  },
+  "hfq": {
+    "constant_daily_weight": {
+      "T": 21,
+      "cumulative_return": 0.04739465712621427,
+      "daily_mean": 0.0022801826945823937,
+      "daily_sd": 0.012261175254639173,
+      "annualized_252": 0.7431078160334348,
+      "monthly_compound_12": 0.7431078160334348,
+      "paper_mixed_frequency_sharpe": 0.0847141449788931,
+      "daily_rf_sharpe": 0.18114896064048075,
+      "annualized_daily_sharpe": 2.875650600675239
+    },
+    "buy_and_hold": {
+      "T": 21,
+      "cumulative_return": 0.04521359398193381,
+      "daily_mean": 0.002179345981011644,
+      "daily_sd": 0.012147804699897265,
+      "annualized_252": 0.7000456917963513,
+      "monthly_compound_12": 0.7000456917963513,
+      "paper_mixed_frequency_sharpe": 0.07720393007061606,
+      "daily_rf_sharpe": 0.1745387329165614,
+      "annualized_daily_sharpe": 2.7707164886732687
+    },
+    "unnormalized_coefficients": {
+      "T": 21,
+      "cumulative_return": 0.23111375643875087,
+      "daily_mean": 0.012209694274680348,
+      "daily_sd": 0.0656549151360164,
+      "annualized_252": 11.122109692720056,
+      "monthly_compound_12": 11.122109692720056,
+      "paper_mixed_frequency_sharpe": 0.16705842259499365,
+      "daily_rf_sharpe": 0.1850678004614638,
+      "annualized_daily_sharpe": 2.9378602542405474
+    },
+    "per_asset": [
+      {
+        "code": "000975",
+        "exchange": "SZ",
+        "asset_id": "000975.SZ",
+        "raw_coefficient": 0.1035,
+        "normalized_weight": 0.01932881393915625,
+        "anchor_close": 139.571,
+        "last_close": 146.5,
+        "cumulative_return": 0.04964498355675606,
+        "constant_weight_log_contribution": 0.0010659351817523164
+      },
+      {
+        "code": "300442",
+        "exchange": "SZ",
+        "asset_id": "300442.SZ",
+        "raw_coefficient": 0.0995,
+        "normalized_weight": 0.018581806637159876,
+        "anchor_close": 105.663,
+        "last_close": 90.237,
+        "cumulative_return": -0.14599244768745923,
+        "constant_weight_log_contribution": -0.002604508998261773
+      },
+      {
+        "code": "301236",
+        "exchange": "SZ",
+        "asset_id": "301236.SZ",
+        "raw_coefficient": 0.1873,
+        "normalized_weight": 0.034978616915980344,
+        "anchor_close": 130.215,
+        "last_close": 131.88,
+        "cumulative_return": 0.012786545328879129,
+        "constant_weight_log_contribution": 0.0007962780393969376
+      },
+      {
+        "code": "600066",
+        "exchange": "SH",
+        "asset_id": "600066.SH",
+        "raw_coefficient": 0.0932,
+        "normalized_weight": 0.01740527013651558,
+        "anchor_close": 920.552,
+        "last_close": 927.922,
+        "cumulative_return": 0.008006065925661998,
+        "constant_weight_log_contribution": 0.0001538337221903648
+      },
+      {
+        "code": "600160",
+        "exchange": "SH",
+        "asset_id": "600160.SH",
+        "raw_coefficient": 0.3272,
+        "normalized_weight": 0.061105197303303625,
+        "anchor_close": 239.485,
+        "last_close": 245.937,
+        "cumulative_return": 0.026941144539323947,
+        "constant_weight_log_contribution": 0.0017060919072481354
+      },
+      {
+        "code": "600183",
+        "exchange": "SH",
+        "asset_id": "600183.SH",
+        "raw_coefficient": 0.0032,
+        "normalized_weight": 0.0005976058415971015,
+        "anchor_close": 234.76,
+        "last_close": 213.347,
+        "cumulative_return": -0.09121230192537055,
+        "constant_weight_log_contribution": -5.2334573051151234e-05
+      },
+      {
+        "code": "600377",
+        "exchange": "SH",
+        "asset_id": "600377.SH",
+        "raw_coefficient": 0.3849,
+        "normalized_weight": 0.07188077763460136,
+        "anchor_close": 30.117,
+        "last_close": 30.064,
+        "cumulative_return": -0.001759803433276863,
+        "constant_weight_log_contribution": -0.00011900086123614617
+      },
+      {
+        "code": "600415",
+        "exchange": "SH",
+        "asset_id": "600415.SH",
+        "raw_coefficient": 0.1269,
+        "normalized_weight": 0.02369880665583506,
+        "anchor_close": 562.268,
+        "last_close": 565.736,
+        "cumulative_return": 0.006167877240034869,
+        "constant_weight_log_contribution": 0.00043371954990476745
+      },
+      {
+        "code": "600660",
+        "exchange": "SH",
+        "asset_id": "600660.SH",
+        "raw_coefficient": 0.185,
+        "normalized_weight": 0.03454908771733243,
+        "anchor_close": 2452.146,
+        "last_close": 2436.484,
+        "cumulative_return": -0.006387058519354172,
+        "constant_weight_log_contribution": -0.0002249289150824153
+      },
+      {
+        "code": "601077",
+        "exchange": "SH",
+        "asset_id": "601077.SH",
+        "raw_coefficient": 0.2889,
+        "normalized_weight": 0.053952602386688316,
+        "anchor_close": 7.539,
+        "last_close": 8.309,
+        "cumulative_return": 0.10213556174558946,
+        "constant_weight_log_contribution": 0.005221053990709962
+      },
+      {
+        "code": "601127",
+        "exchange": "SH",
+        "asset_id": "601127.SH",
+        "raw_coefficient": 0.8396,
+        "normalized_weight": 0.15679683268903952,
+        "anchor_close": 126.881,
+        "last_close": 131.271,
+        "cumulative_return": 0.03459934899630346,
+        "constant_weight_log_contribution": 0.0058247017222644235
+      },
+      {
+        "code": "601229",
+        "exchange": "SH",
+        "asset_id": "601229.SH",
+        "raw_coefficient": 1.3183,
+        "normalized_weight": 0.2461949315554559,
+        "anchor_close": 30.811,
+        "last_close": 32.065,
+        "cumulative_return": 0.04069975008925386,
+        "constant_weight_log_contribution": 0.009771240544464644
+      },
+      {
+        "code": "601288",
+        "exchange": "SH",
+        "asset_id": "601288.SH",
+        "raw_coefficient": 0.7038,
+        "normalized_weight": 0.1314359347862625,
+        "anchor_close": 7.713,
+        "last_close": 7.953,
+        "cumulative_return": 0.031116297160638018,
+        "constant_weight_log_contribution": 0.003952445051671038
+      },
+      {
+        "code": "605499",
+        "exchange": "SH",
+        "asset_id": "605499.SH",
+        "raw_coefficient": 0.6934,
+        "normalized_weight": 0.12949371580107194,
+        "anchor_close": 333.661,
+        "last_close": 385.05,
+        "cumulative_return": 0.15401560266258274,
+        "constant_weight_log_contribution": 0.01878222320616662
+      }
+    ],
+    "rounded_weight_cumulative_bound": {
+      "constant_weight_vertex_min": 0.047387754952308514,
+      "constant_weight_vertex_max": 0.04740156034650522,
+      "note": "Extrema over 2^14 coefficient-box vertices; diagnostic, not guaranteed interior bound",
+      "conservative_daily_independent_min": 0.04734919921559322,
+      "conservative_daily_independent_max": 0.047440117459222275
+    }
+  },
+  "raw": {
+    "constant_daily_weight": {
+      "T": 21,
+      "cumulative_return": 0.05390177837277288,
+      "daily_mean": 0.0025948675818696673,
+      "daily_sd": 0.013764273737808839,
+      "annualized_252": 0.8775938245289165,
+      "monthly_compound_12": 0.8775938245289165,
+      "paper_mixed_frequency_sharpe": 0.09832555579760216,
+      "daily_rf_sharpe": 0.18422941080650276,
+      "annualized_daily_sharpe": 2.9245512310677704
+    },
+    "buy_and_hold": {
+      "T": 21,
+      "cumulative_return": 0.05117792442466906,
+      "daily_mean": 0.0024698752490738486,
+      "daily_sd": 0.01365748926092534,
+      "annualized_252": 0.8201818579507163,
+      "monthly_compound_12": 0.8201818579507163,
+      "paper_mixed_frequency_sharpe": 0.08994241248565675,
+      "daily_rf_sharpe": 0.17651792815224837,
+      "annualized_daily_sharpe": 2.802135239011298
+    },
+    "unnormalized_coefficients": {
+      "T": 21,
+      "cumulative_return": 0.258639494831435,
+      "daily_mean": 0.013894737440637508,
+      "daily_sd": 0.07370355658384502,
+      "annualized_252": 14.805792062197398,
+      "monthly_compound_12": 14.805792062197398,
+      "paper_mixed_frequency_sharpe": 0.17167760024977793,
+      "daily_rf_sharpe": 0.18772030199009962,
+      "annualized_daily_sharpe": 2.9799674106224816
+    },
+    "per_asset": [
+      {
+        "code": "000975",
+        "exchange": "SZ",
+        "asset_id": "000975.SZ",
+        "raw_coefficient": 0.1035,
+        "normalized_weight": 0.01932881393915625,
+        "anchor_close": 19.2,
+        "last_close": 20.25,
+        "cumulative_return": 0.0546875,
+        "constant_weight_log_contribution": 0.0011829844289757531
+      },
+      {
+        "code": "300442",
+        "exchange": "SZ",
+        "asset_id": "300442.SZ",
+        "raw_coefficient": 0.0995,
+        "normalized_weight": 0.018581806637159876,
+        "anchor_close": 57.14,
+        "last_close": 48.57,
+        "cumulative_return": -0.1499824991249562,
+        "constant_weight_log_contribution": -0.0026684797562155195
+      },
+      {
+        "code": "301236",
+        "exchange": "SZ",
+        "asset_id": "301236.SZ",
+        "raw_coefficient": 0.1873,
+        "normalized_weight": 0.034978616915980344,
+        "anchor_close": 57.36,
+        "last_close": 58.1,
+        "cumulative_return": 0.012900976290097566,
+        "constant_weight_log_contribution": 0.0007868238845061083
+      },
+      {
+        "code": "600066",
+        "exchange": "SH",
+        "asset_id": "600066.SH",
+        "raw_coefficient": 0.0932,
+        "normalized_weight": 0.01740527013651558,
+        "anchor_close": 26.51,
+        "last_close": 26.8,
+        "cumulative_return": 0.010939268200679031,
+        "constant_weight_log_contribution": 0.0002352080915618685
+      },
+      {
+        "code": "600160",
+        "exchange": "SH",
+        "asset_id": "600160.SH",
+        "raw_coefficient": 0.3272,
+        "normalized_weight": 0.061105197303303625,
+        "anchor_close": 24.71,
+        "last_close": 25.41,
+        "cumulative_return": 0.028328611898017053,
+        "constant_weight_log_contribution": 0.0017796290001023023
+      },
+      {
+        "code": "600183",
+        "exchange": "SH",
+        "asset_id": "600183.SH",
+        "raw_coefficient": 0.0032,
+        "normalized_weight": 0.0005976058415971015,
+        "anchor_close": 27.21,
+        "last_close": 24.29,
+        "cumulative_return": -0.10731348768834992,
+        "constant_weight_log_contribution": -6.063953217779728e-05
+      },
+      {
+        "code": "600377",
+        "exchange": "SH",
+        "asset_id": "600377.SH",
+        "raw_coefficient": 0.3849,
+        "normalized_weight": 0.07188077763460136,
+        "anchor_close": 15.28,
+        "last_close": 15.24,
+        "cumulative_return": -0.002617801047120394,
+        "constant_weight_log_contribution": -0.00015083828433703757
+      },
+      {
+        "code": "600415",
+        "exchange": "SH",
+        "asset_id": "600415.SH",
+        "raw_coefficient": 0.1269,
+        "normalized_weight": 0.02369880665583506,
+        "anchor_close": 15.23,
+        "last_close": 15.33,
+        "cumulative_return": 0.006565988181221227,
+        "constant_weight_log_contribution": 0.0004811411800507934
+      },
+      {
+        "code": "600660",
+        "exchange": "SH",
+        "asset_id": "600660.SH",
+        "raw_coefficient": 0.185,
+        "normalized_weight": 0.03454908771733243,
+        "anchor_close": 58.57,
+        "last_close": 58.12,
+        "cumulative_return": -0.007683114222298171,
+        "constant_weight_log_contribution": -0.00026248167401178883
+      },
+      {
+        "code": "601077",
+        "exchange": "SH",
+        "asset_id": "601077.SH",
+        "raw_coefficient": 0.2889,
+        "normalized_weight": 0.053952602386688316,
+        "anchor_close": 6.08,
+        "last_close": 6.85,
+        "cumulative_return": 0.1266447368421051,
+        "constant_weight_log_contribution": 0.006414724724007939
+      },
+      {
+        "code": "601127",
+        "exchange": "SH",
+        "asset_id": "601127.SH",
+        "raw_coefficient": 0.8396,
+        "normalized_weight": 0.15679683268903952,
+        "anchor_close": 125.89,
+        "last_close": 130.28,
+        "cumulative_return": 0.03487171340058781,
+        "constant_weight_log_contribution": 0.005793384482897685
+      },
+      {
+        "code": "601229",
+        "exchange": "SH",
+        "asset_id": "601229.SH",
+        "raw_coefficient": 1.3183,
+        "normalized_weight": 0.2461949315554559,
+        "anchor_close": 9.85,
+        "last_close": 10.38,
+        "cumulative_return": 0.05380710659898491,
+        "constant_weight_log_contribution": 0.012845099448025438
+      },
+      {
+        "code": "601288",
+        "exchange": "SH",
+        "asset_id": "601288.SH",
+        "raw_coefficient": 0.7038,
+        "normalized_weight": 0.1314359347862625,
+        "anchor_close": 5.18,
+        "last_close": 5.42,
+        "cumulative_return": 0.04633204633204646,
+        "constant_weight_log_contribution": 0.005877955162096759
+      },
+      {
+        "code": "605499",
+        "exchange": "SH",
+        "asset_id": "605499.SH",
+        "raw_coefficient": 0.6934,
+        "normalized_weight": 0.12949371580107194,
+        "anchor_close": 248.97,
+        "last_close": 286.0,
+        "cumulative_return": 0.14873277904968463,
+        "constant_weight_log_contribution": 0.018222618675893438
+      }
+    ],
+    "rounded_weight_cumulative_bound": {
+      "constant_weight_vertex_min": 0.05389426499286509,
+      "constant_weight_vertex_max": 0.053909292603037784,
+      "note": "Extrema over 2^14 coefficient-box vertices; diagnostic, not guaranteed interior bound",
+      "conservative_daily_independent_min": 0.053850234507228034,
+      "conservative_daily_independent_max": 0.05395332505074513
+    }
+  },
+  "arithmetic_checks": {
+    "claimed_monthly_compound_12": 0.9033711243749019,
+    "claimed_daily_mean_times_252": 0.6678,
+    "mixed_frequency_sharpe_using_printed_stats": 0.1028111155876442,
+    "annual_daily_sharpe_using_printed_stats": 3.0021550153259526
+  },
+  "holdings_comparison": {
+    "current_weights_source": "C:\\Users\\derdu\\Downloads\\csi500-portfolio-research-main\\csi500-portfolio-research-main\\task02\\results\\weights.csv",
+    "current_weights_sha256": "78e4a0dccdb4572fb835d116a6a1719cbf25d913092a5bd8cb4bedf47af587a6",
+    "current_holdings": [
+      {
+        "model_id": "l1_cv",
+        "asset_id": "001309.SZ",
+        "name": "德明利",
+        "raw_coefficient": "0.2587234615044292",
+        "invested_weight": "0.17019478019987655",
+        "status": "optimal"
+      },
+      {
+        "model_id": "l1_cv",
+        "asset_id": "002407.SZ",
+        "name": "多氟多",
+        "raw_coefficient": "0.20000092836965003",
+        "invested_weight": "0.13156562549724973",
+        "status": "optimal"
+      },
+      {
+        "model_id": "l1_cv",
+        "asset_id": "600105.SH",
+        "name": "永鼎股份",
+        "raw_coefficient": "0.15813447647057785",
+        "invested_weight": "0.1040248236802127",
+        "status": "optimal"
+      },
+      {
+        "model_id": "l1_cv",
+        "asset_id": "601869.SH",
+        "name": "长飞光纤",
+        "raw_coefficient": "0.3125682813242818",
+        "invested_weight": "0.20561525278034598",
+        "status": "optimal"
+      },
+      {
+        "model_id": "l1_cv",
+        "asset_id": "603119.SH",
+        "name": "浙江荣泰",
+        "raw_coefficient": "0.040955522879382616",
+        "invested_weight": "0.026941569867285537",
+        "status": "optimal"
+      },
+      {
+        "model_id": "l1_cv",
+        "asset_id": "603256.SH",
+        "name": "宏和科技",
+        "raw_coefficient": "0.4060905597625471",
+        "invested_weight": "0.2671365525111001",
+        "status": "optimal"
+      },
+      {
+        "model_id": "l1_cv",
+        "asset_id": "688498.SH",
+        "name": "源杰科技",
+        "raw_coefficient": "0.14368773585145847",
+        "invested_weight": "0.0945213954639295",
+        "status": "optimal"
+      }
+    ],
+    "current_support": 7,
+    "paper_support": 14,
+    "common_holdings": [],
+    "current_max_weight": 0.2671365525111001,
+    "current_hhi": 0.1803966532122699,
+    "current_effective_holdings": 5.543340090812637,
+    "current_top3_weight": 0.6429465854913226,
+    "paper_bank_codes": [
+      "601077.SH",
+      "601229.SH",
+      "601288.SH"
+    ],
+    "paper_bank_weight": 0.43158346872840675,
+    "paper_top4_weight": 0.6639214148318299,
+    "classification_note": "605499.SH is Dongpeng Beverage, not a bank. Names are current Tencent metadata, not historical names."
+  },
+  "baseline_601127_crosscheck": {
+    "raw": {
+      "T": 21,
+      "cumulative_return": 0.03487171340058737,
+      "daily_mean": 0.002104648405206918,
+      "daily_sd": 0.03133076571489672,
+      "paper_sharpe_correct_mean": 0.02754993914327603,
+      "paper_sharpe_stale_main_mean": 0.04495620363600069
+    },
+    "hfq": {
+      "T": 21,
+      "cumulative_return": 0.034599348996303236,
+      "daily_mean": 0.002084577619580189,
+      "daily_sd": 0.031080688830666916,
+      "paper_sharpe_correct_mean": 0.027125843565572738,
+      "paper_sharpe_stale_main_mean": 0.04531792365428416
+    }
+  },
+  "reproduction_status": {
+    "observed_positive_sign_in_paper_window": "confirmed for printed 14-name normalized portfolio under Tencent raw and hfq prices",
+    "exact_5_51_percent": "not reproduced: raw +5.39018%, hfq +4.73947%; original JY return panel unavailable",
+    "raw_gap_to_claim_bp": 11.982216272271238,
+    "hfq_gap_to_claim_bp": 77.05342873785735,
+    "weight_rounding_is_sufficient_explanation": false,
+    "unsupported_inference_to_avoid": "A vendor/return-definition mismatch is not evidence of fabrication; full original optimizer and 278-stock panel not reconstructed."
+  }
+}

@@ -13,6 +13,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from evalcore import EVALUABLE_STATUSES
+
 REQUIRED_DATA_FILES = [
     "periods.json",
     "calendar.csv",
@@ -157,17 +159,35 @@ def check_task02(frozen, t02) -> list[dict]:
     def add(name, passed, detail=""):
         checks.append({"check": name, "passed": bool(passed), "detail": str(detail)})
 
+    run_models = set(runs.index)
+    weight_models = set(t02["weights"])
+    row_models = {row["model_id"] for row in t02.get("weights_rows", [])}
+    model_sets_match = run_models == weight_models == row_models == set(t02["statuses"])
+    add("task02:l1_cv_required", "l1_cv" in run_models and "l1_cv" in weight_models)
+    add("task02:model_sets_match", model_sets_match,
+        f"runs={sorted(run_models)} weights={sorted(weight_models)} rows={sorted(row_models)}")
+    add("task02:run_models_unique", runs.index.is_unique)
+    if not model_sets_match or not runs.index.is_unique or runs.empty:
+        return checks
     add("task02_data_version_matches",
-        str(runs["data_version"].iloc[0]) == periods["data_version"], runs["data_version"].iloc[0])
+        runs["data_version"].astype(str).eq(periods["data_version"]).all(), periods["data_version"])
     add("task02_estimation_end_matches",
-        str(runs["estimation_end"].iloc[0]) == periods["estimation_end"], runs["estimation_end"].iloc[0])
+        runs["estimation_end"].astype(str).eq(periods["estimation_end"]).all(), periods["estimation_end"])
     for model, w in t02["weights"].items():
-        status = str(t02["statuses"][model]).strip()
+        value = t02["statuses"][model]
+        status = "" if pd.isna(value) else str(value).strip()
+        value = runs.loc[model].get("status")
+        run_status = "" if pd.isna(value) else str(value).strip()
+        row_statuses = {"" if pd.isna(row.get("status")) else str(row["status"]).strip()
+                        for row in t02["weights_rows"] if row["model_id"] == model}
+        statuses_match = bool(status) and run_status == status and row_statuses == {status}
+        add(f"{model}:statuses_match", statuses_match,
+            f"runs={run_status} weights={sorted(row_statuses)}")
         # 上游可能给出 solver_failure / failed_kkt / lambda_max_zero / feasible_timelimit 等
-        # 任意非空状态；任务3 只要求非空且原样保留，不因未知状态停止整批评价。
+        # 任意非空状态；任务3 要求非空且原样保留，不因未知状态停止整批评价。
         add(f"{model}:status_present", bool(status), status)
-        if status != "optimal":
-            # 失败/不可行模型保留结果行，不做权重校验，也不阻断其他模型评价。
+        if not statuses_match or status not in EVALUABLE_STATUSES:
+            # 其他状态保留空业绩行，不做权重校验，也不阻断其他模型评价。
             continue
         unknown = [a for a in w.index if a not in ids]
         add(f"{model}:assets_in_frozen_pool", not unknown, unknown)

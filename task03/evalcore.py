@@ -14,6 +14,9 @@ import numpy as np
 import pandas as pd
 
 
+EVALUABLE_STATUSES = frozenset({"optimal", "feasible_heuristic"})
+
+
 class WeightError(ValueError):
     """权重不满足评价契约。"""
 
@@ -124,3 +127,20 @@ def empirical_var_cvar(losses, alpha: float) -> tuple[float, float]:
     tail = float(np.maximum(0.0, x - var).sum())
     cvar = var + tail / (x.size * (1.0 - alpha))
     return var, cvar
+
+
+def estimation_risk_statistics(returns: pd.DataFrame, alphas=(.95, .99)) -> list[dict]:
+    """Equal-weight estimation risks, with distinct daily VaR and CVaR fields."""
+    if returns.empty or returns.shape[1] == 0:
+        raise ValueError("estimation returns must be nonempty")
+    losses = -returns.to_numpy(dtype=float).mean(axis=1)
+    rows = []
+    for alpha in alphas:
+        var, cvar = empirical_var_cvar(losses, alpha)
+        rows.append({"portfolio_id": "equal", "alpha": float(alpha),
+                     "empirical_var": var, "empirical_cvar": cvar,
+                     "daily_sd": float(losses.std(ddof=1)),
+                     "n_days": len(returns), "n_assets": returns.shape[1],
+                     "estimation_start": str(returns.index[0]),
+                     "estimation_end": str(returns.index[-1]), "unit": "decimal_daily_loss"})
+    return rows

@@ -15,7 +15,7 @@ import numpy as np
 import pandas as pd
 from scipy.optimize import linprog, minimize
 
-from evalcore import empirical_var_cvar
+from evalcore import empirical_var_cvar, validate_weights
 
 
 def _as_arrays(R, mu=None):
@@ -170,49 +170,79 @@ def cvar_portfolio(R, alpha: float, loss_max: float, assets, mu=None
     }
 
 
-def var_candidates(n: int, budget: int, seed: int) -> np.ndarray:
-    """VaR 启发式候选集合：等权、全部单资产边界点、Dirichlet(1) 随机点。
+def var_candidates(n: int, budget: int, seed: int, warm_starts=None) -> np.ndarray:
+    """Fixed total budget: equal weight, vertices, warm starts, then Dirichlet(1).
 
-    候选预算在看检验结果前登记；随机数生成器固定种子，结果可复现。
+    Warm starts consume the same budget as random points; duplicate allocations
+    retain distinct candidate IDs so their solver provenance remains traceable.
     """
-    if budget < 1 + n:
-        raise ValueError(f"budget={budget} 不足以容纳等权与 {n} 个边界点")
+    warm_starts = list(warm_starts or [])
+    if n < 1:
+        raise ValueError("n must be positive")
+    required = 1 + n + len(warm_starts)
+    if budget < required:
+        raise ValueError(f"budget={budget} cannot hold {required} deterministic candidates")
     rng = np.random.default_rng(seed)
-    rows = [np.full(n, 1.0 / n)]
-    rows.extend(np.eye(n))
-    rows.extend(rng.dirichlet(np.ones(n), size=budget - 1 - n))
-    return np.asarray(rows)
+    rows = [np.full(n, 1.0 / n), *np.eye(n), *warm_starts]
+    rows.extend(rng.dirichlet(np.ones(n), size=budget - required))
+    return np.asarray(rows, dtype=float)
 
 
 def var_heuristic(R, alpha: float, loss_max: float, assets, budget: int,
-                  seed: int, mu=None) -> tuple[pd.Series | None, dict]:
-    """随机候选 + 经验 VaR 筛选 + 估计期均值择优；只称启发式，不称最优。"""
+                  seed: int, mu=None, warm_starts=None) -> tuple[pd.Series | None, dict]:
+    """Select the highest estimation mean among feasible sampled candidates.
+
+    This provides neither global optimality nor an infeasibility certificate.
+    warm_starts maps IDs to labeled invested weights from estimation-period
+    solvers; every supplied allocation is included within the total budget.
+    """
     start = time.time()
     R, mu_vec = _as_arrays(R, mu)
     T, n = R.shape
+    assets = list(assets)
+    if len(assets) != n or len(set(assets)) != n:
+        raise ValueError("assets must uniquely label every return column")
     if not (0 < alpha < 1):
-        return None, {"status": "fail", "reason": "alpha 必须在 (0,1)",
+        return None, {"status": "fail", "reason": "alpha must be in (0,1)",
                       "solver": "random-search"}
-    U = var_candidates(n, budget, seed)
+    warm_starts = dict(warm_starts or {})
+    warm_vectors = [validate_weights(w, assets) for w in warm_starts.values()]
+    U = var_candidates(n, budget, seed, warm_starts=warm_vectors)
+    candidate_ids = ["equal", *[f"single:{a}" for a in assets], *warm_starts,
+                     *[f"random:{i}" for i in range(budget - 1 - n - len(warm_vectors))]]
+    if len(set(candidate_ids)) != len(candidate_ids):
+        raise ValueError("warm-start IDs must be distinct from reserved candidate IDs")
     means = U @ mu_vec
-    losses = -(R @ U.T)                    # T × budget
+    losses = -(R @ U.T)
     ordered = np.sort(losses, axis=0)
     k = int(np.ceil(alpha * T))
     var = ordered[k - 1, :]
-    feasible = var <= loss_max
+    risk_tolerance = 1e-10
+    feasible = var <= loss_max + risk_tolerance
+    warm_trace = []
+    for i, candidate_id in enumerate(warm_starts, start=1 + n):
+        warm_trace.append({
+            "candidate_id": candidate_id, "candidate_index": i,
+            "weights": dict(zip(assets, U[i].tolist())),
+            "objective": float(means[i]), "empirical_var": float(var[i]),
+            "feasible": bool(feasible[i]),
+        })
+    info = {
+        "solver": "random-search", "budget": budget, "total_candidates": len(U),
+        "random_budget": budget - 1 - n - len(warm_vectors), "seed": seed,
+        "random_distribution": "Dirichlet(1)", "risk_tolerance": risk_tolerance,
+        "feasible_count": int(feasible.sum()), "warm_starts": warm_trace,
+    }
     if not feasible.any():
-        return None, {
-            "status": "infeasible", "reason": "没有满足损失限额的候选",
-            "solver": "random-search", "budget": budget, "seed": seed,
-            "feasible_count": 0, "seconds": round(time.time() - start, 6),
-        }
-    order = np.argsort(-means)
-    pick = next(i for i in order if feasible[i])
+        return None, {**info, "status": "no_feasible_candidate",
+                      "reason": "No feasible sampled candidate; infeasibility is not established",
+                      "seconds": round(time.time() - start, 6)}
+    pick = int(np.argmax(np.where(feasible, means, -np.inf)))
     u = U[pick]
     emp_var, emp_cvar = empirical_var_cvar(-(R @ u), alpha)
     return _to_series(u, assets), {
-        "status": "optimal", "solver": "random-search", "budget": budget,
-        "seed": seed, "feasible_count": int(feasible.sum()),
+        **info, "status": "feasible_heuristic",
+        "selected_candidate_id": candidate_ids[pick], "selected_candidate_index": pick,
         "empirical_var": emp_var, "empirical_cvar": emp_cvar,
         "objective": float(mu_vec @ u),
         "seconds": round(time.time() - start, 6),

@@ -1,4 +1,4 @@
-"""任务3 公共评价与四类基准：一次跑通冻结数据、任务2权重与比较表。
+"""任务3 公共评价与八类基准：一次跑通冻结数据、任务2权重与比较表。
 
 用法（仓库根目录）：
     python task03/run.py --output task03/results
@@ -10,7 +10,7 @@
 
 输出：
     metrics.csv, comparison.csv, nav.csv, daily_returns.csv,
-    weights_benchmarks.csv, run_manifest.json, checks.txt
+    weights_benchmarks.csv, risk_statistics.csv, run_manifest.json, checks.txt
 """
 
 from __future__ import annotations
@@ -28,9 +28,12 @@ import scipy
 
 from benchmarks import (cvar_portfolio, equal_weight, mean_variance,
                         var_heuristic)
-from evalcore import (buy_and_hold_nav, performance_metrics, validate_weights)
+from evalcore import (EVALUABLE_STATUSES, buy_and_hold_nav, estimation_risk_statistics,
+                      performance_metrics, validate_weights)
 from frozen import (check_frozen, check_task02, load_frozen, load_task02,
                     read_json, sha256, write_checks, write_csv)
+from simple_baselines import (gmv, inverse_volatility, low_volatility_top20,
+                              momentum_top20)
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -38,8 +41,10 @@ DATA = ROOT / "data_delivery_01" / "data"
 TASK02 = ROOT / "task02"
 
 ROLES = {
-    "l1_eta_0.01": "main", "equal": "main", "mv": "main",
+    "l1_cv": "main", "l1_eta_0.01": "sensitivity", "equal": "main", "mv": "main",
     "cvar_a95": "main", "var_a95_s0": "main",
+    "gmv": "main", "inverse_volatility": "main",
+    "momentum_top20": "main", "low_volatility_top20": "main",
     "mv_continuous": "extension", "mv_cardinality": "extension",
     "csi500_index_price": "reference",
 }
@@ -138,7 +143,7 @@ def main(output: Path) -> pd.DataFrame:
         comparison_rows.append(comp)
         return row
 
-    # ---------- 任务2 交付的 7 个模型 ----------
+    # ---------- 任务2 交付：随机十折主模型、eta 敏感性及拓展 ----------
     runs = t02["runs"].set_index("model_id")
     for model_id in runs.index:
         w = t02["weights"][model_id]
@@ -147,7 +152,7 @@ def main(output: Path) -> pd.DataFrame:
         extra = {k: (None if pd.isna(run.get(k)) else run.get(k)) for k in
                  ("T", "N", "eta", "lambda_value", "sigma", "gamma", "cap", "K",
                   "objective", "solver", "seconds")}
-        if status != "optimal":
+        if status not in EVALUABLE_STATUSES:
             record(model_id, "task02", status, run.get("solver"), None, None,
                    extra=extra, note=str(run.get("reason", "")))
             continue
@@ -155,13 +160,22 @@ def main(output: Path) -> pd.DataFrame:
         record(model_id, "task02", status, run.get("solver"), nav, u,
                extra=extra, seconds=extra.get("seconds"), note="")
 
-    # ---------- 任务3 四类基准（估计期定权，预登记参数） ----------
+    # ---------- 任务3 八类基准（仅估计期定权，固定规则见 protocol） ----------
     mu = est.mean()
     bench = {}
     cfg = protocol["benchmarks"]
     plans = [("equal", lambda: equal_weight(ids))]
     plans.append(("mv", lambda: mean_variance(
         est.to_numpy(), cfg["mv"]["sigma_max_daily"], ids, mu=mu.to_numpy())))
+    plans.extend([
+        ("gmv", lambda: gmv(est, ids)),
+        ("inverse_volatility", lambda: inverse_volatility(est, ids)),
+        ("momentum_top20", lambda: momentum_top20(
+            est, ids, k=cfg["momentum_top20"]["k"],
+            lookback=cfg["momentum_top20"]["lookback"], skip=cfg["momentum_top20"]["skip"])),
+        ("low_volatility_top20", lambda: low_volatility_top20(
+            est, ids, k=cfg["low_volatility_top20"]["k"], lookback=cfg["low_volatility_top20"]["lookback"])),
+    ])
     for spec in cfg["cvar"]:
         model_id = f"cvar_a{int(round(spec['alpha'] * 100))}"
         plans.append((model_id, lambda s=spec: cvar_portfolio(
@@ -171,13 +185,17 @@ def main(output: Path) -> pd.DataFrame:
         plans.append((model_id, lambda s=seed: var_heuristic(
             est.to_numpy(), cfg["var_heuristic"]["alpha"],
             cfg["var_heuristic"]["loss_max"], ids,
-            cfg["var_heuristic"]["budget"], s, mu=mu.to_numpy())))
+            cfg["var_heuristic"]["budget"], s, mu=mu.to_numpy(),
+            warm_starts={m: w for m, (w, info) in bench.items()
+                         if m in cfg["var_heuristic"]["warm_start_ids"]
+                         and w is not None and info["status"] in EVALUABLE_STATUSES})))
 
     for model_id, solve in plans:
         w, info = solve()
         bench[model_id] = (w, info)
         extra = {
             "T": len(est), "N": len(ids),
+            "K": info.get("parameters", {}).get("k"),
             "sigma": (cfg["mv"]["sigma_max_daily"] if model_id == "mv" else None),
             "alpha": (cfg["var_heuristic"]["alpha"]
                       if model_id.startswith("var") else
@@ -192,7 +210,7 @@ def main(output: Path) -> pd.DataFrame:
             "objective": info.get("objective"), "solver": info.get("solver"),
             "seconds": info.get("seconds"),
         }
-        if w is None:
+        if w is None or info.get("status") not in EVALUABLE_STATUSES:
             record(model_id, "task03", info.get("status", "fail"),
                    info.get("solver", ""), None, None, extra=extra,
                    note=info.get("reason", ""))
@@ -209,7 +227,7 @@ def main(output: Path) -> pd.DataFrame:
                     f"经验 VaR={info.get('empirical_var', float('nan')):.6g}; "
                     f"经验 CVaR={info.get('empirical_cvar', float('nan')):.6g}")
         if model_id.startswith("var"):
-            note = (f"候选 {info.get('budget')}，可行 {info.get('feasible_count')}，"
+            note = (f"候选 {info.get('total_candidates')}（随机 {info.get('random_budget')}），可行 {info.get('feasible_count')}，"
                     f"经验 VaR={info.get('empirical_var', float('nan')):.6g}")
         record(model_id, "task03", info.get("status"), info.get("solver"),
                nav, u, extra=extra, seconds=info.get("seconds"), note=note)
@@ -237,10 +255,12 @@ def main(output: Path) -> pd.DataFrame:
     write_csv(output / "daily_returns.csv", daily_rows,
               ["date", "model_id", "gross_return"])
 
+    write_csv(output / "risk_statistics.csv", estimation_risk_statistics(est))
+
     name_map = {a["asset_id"]: a["name"] for a in frozen["assets"]}
     weight_rows = []
     for model_id, (w, info) in bench.items():
-        if w is None:
+        if w is None or info.get("status") not in EVALUABLE_STATUSES:
             continue
         for asset_id in ids:
             weight_rows.append({
@@ -266,8 +286,10 @@ def main(output: Path) -> pd.DataFrame:
                    ("periods.json", "calendar.csv", "model_assets.csv",
                     "model_returns_wide.csv", "missing_mask.csv", "index_daily.csv")},
         "task02_weights_sha256": t02["weights_sha256"],
+        "task02_outputs": t02["manifest"].get("outputs", {}),
+        "benchmark_runs": {m: info for m, (_, info) in bench.items()},
         "code_sha256": {name: sha256(HERE / name) for name in
-                        ("evalcore.py", "benchmarks.py", "frozen.py", "run.py",
+                        ("evalcore.py", "benchmarks.py", "simple_baselines.py", "frozen.py", "run.py",
                          "protocol.json")},
         "environment": {
             "python": platform.python_version(), "numpy": np.__version__,
@@ -275,7 +297,7 @@ def main(output: Path) -> pd.DataFrame:
         },
         "outputs": {name: sha256(output / name) for name in
                     ("metrics.csv", "comparison.csv", "nav.csv",
-                     "daily_returns.csv", "weights_benchmarks.csv", "checks.txt")},
+                     "daily_returns.csv", "weights_benchmarks.csv", "risk_statistics.csv", "checks.txt")},
         "checks_passed": len(checks),
     }
     (output / "run_manifest.json").write_text(

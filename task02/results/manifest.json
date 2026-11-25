@@ -3,8 +3,21 @@
     "data_version": "csi500_20261111T020022_current_v1",
     "estimation_start": "2025-01-02",
     "estimation_end": "2026-06-30",
+    "revised_on": "2026-11-26",
+    "model_positioning": "Empirical nonnegative L1 sparse allocation; shuffled ten-fold raw-risk lambda calibration followed by full-investment normalization. No hard invested-weight or future-risk guarantee.",
+    "main_model": "l1_cv",
     "sigma_daily": 0.04,
-    "eta_main": 0.01,
+    "cross_validation": {
+      "n_splits": 10,
+      "seed": 42,
+      "lambda_min": 0.0,
+      "lambda_max": 10.0,
+      "n_lambdas": 100,
+      "criterion": "absolute validation raw-coefficient variance error relative to sigma_daily squared",
+      "aggregation": "mean of per-fold selected lambdas; largest lambda wins exact ties",
+      "zero_policy": "record zero and failed solutions; select only investable nonzero fits",
+      "scope": "estimation period only; shuffled folds reproduce the original procedure and are not chronological validation"
+    },
     "eta_grid": [
       0,
       0.0001,
@@ -12,6 +25,7 @@
       0.01,
       0.1
     ],
+    "eta_role": "supplemental sensitivity; not lambda selection or the main model",
     "extension_pool": "first 20 by estimation liquidity_rank",
     "extension_n": 20,
     "gamma": 15,
@@ -43,46 +57,47 @@
   },
   "code_sha256": {
     "models.py": "df72f8238bb54eb894375825d9172422cb55b4c21a9e1ccad6738fcafa4e70e4",
-    "run.py": "89cee9030febac6268f0ff0127bb9bfada67be0473d78954fd97ccfc49e0d4bf",
-    "protocol.json": "be7dd94c67ee6020948dc16494ce7449261b0202f120f39ba83a20e979a947fc"
+    "cross_validation.py": "f5e10a70e11ebb64d4b6c26cb72de6159acf58454e544733afb46e4a24e73a6c",
+    "run.py": "9bc76af735b041ca0b28f00e75717d56c2fa962d4d627ecac74893f50574c524",
+    "protocol.json": "a1ffb0a88db3f54737c318e68eefe97cbb2c777bb3d75e2af3728afd2c9cb54d"
   },
-  "python": "3.11.7",
+  "python": "3.14.7",
   "numpy": "2.4.6",
-  "scipy": "1.17.1",
+  "scipy": "1.18.0",
   "pyscipopt": "6.3.0",
   "scip": 10.0,
   "target": {
-    "theta_s": 0.4452292159499874,
-    "theta_a": 0.056482766880137605,
-    "r_c": 0.17781337579597187,
+    "theta_s": 0.44522921594998743,
+    "theta_a": 0.05648276688013765,
+    "r_c": 0.1778133757959718,
     "eigen_min": 6.548606631246668e-05,
     "eigen_max": 0.040317785123100414,
     "condition": 615.6696743811752,
     "symmetry_error": 0.0
   },
-  "lambda_max": 1.3562134152910972,
+  "lambda_max": 1.3562134152910963,
   "extension_solver_weights_in_export_order": {
     "mv_continuous": [
       -8.760797619912414e-11,
-      0.0275724322002125,
+      0.02757243220021266,
       -8.82194035483339e-11,
       -8.773971872207805e-11,
       -8.910567138593552e-11,
       0.19348359995559483,
-      0.15922094472785542,
+      0.15922094472785553,
       -8.876775105317486e-11,
-      0.0392687164619032,
-      0.046270608412313695,
-      0.13289465039230997,
-      0.03251481372911037,
-      0.10986272219586858,
+      0.03926871646190314,
+      0.046270608412313605,
+      0.13289465039231,
+      0.032514813729110435,
+      0.10986272219586836,
       -8.913972477313502e-11,
       -8.941942049653297e-11,
       -8.940564939252085e-11,
       -8.890509616522208e-11,
       -8.916520287595945e-11,
       0.25000000008805284,
-      0.00891151272425427
+      0.008911512724254203
     ],
     "mv_cardinality": [
       0.0,
@@ -107,5 +122,14 @@
       0.0
     ]
   },
-  "evaluation": "pending_task03"
+  "evaluation": "pending_task03",
+  "main_model": "l1_cv",
+  "model_positioning": "Empirical nonnegative L1 sparse allocation; shuffled ten-fold raw-risk lambda calibration followed by full-investment normalization. No hard invested-weight or future-risk guarantee.",
+  "outputs": {
+    "weights.csv": "78e4a0dccdb4572fb835d116a6a1719cbf25d913092a5bd8cb4bedf47af587a6",
+    "runs.csv": "da901493802bada5e3eb4eeff77ce3dc38d3e4071b54381c1a0495a8e861680a",
+    "cv_selection.json": "60affcc9e9c5dc5269907d2264ed17f07120cdffec1c52ad97d46600dad95f72",
+    "cv_scores.csv": "b244a09637f3df80375bd143456f213aad54eb37e20b8063d1b4231b3bf4108e",
+    "cv_folds.csv": "b427863cabae04505cc9bb4ed5f29474cc2340fbec7d31413716526b723821fb"
+  }
 }

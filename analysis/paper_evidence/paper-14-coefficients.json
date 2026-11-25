@@ -1,0 +1,119 @@
+{
+  "source": "RawPaper_public.pdf physical p9 / original p9, Table 2",
+  "zero_pad_note": "Printed 975 normalized to 000975.SZ",
+  "raw_sum": 5.354700000000001,
+  "holdings": [
+    {
+      "code": "000975",
+      "exchange": "SZ",
+      "asset_id": "000975.SZ",
+      "raw_coefficient": 0.1035,
+      "normalized_weight": 0.01932881393915625,
+      "name": "山金国际"
+    },
+    {
+      "code": "300442",
+      "exchange": "SZ",
+      "asset_id": "300442.SZ",
+      "raw_coefficient": 0.0995,
+      "normalized_weight": 0.018581806637159876,
+      "name": "润泽科技"
+    },
+    {
+      "code": "301236",
+      "exchange": "SZ",
+      "asset_id": "301236.SZ",
+      "raw_coefficient": 0.1873,
+      "normalized_weight": 0.034978616915980344,
+      "name": "软通动力"
+    },
+    {
+      "code": "600066",
+      "exchange": "SH",
+      "asset_id": "600066.SH",
+      "raw_coefficient": 0.0932,
+      "normalized_weight": 0.01740527013651558,
+      "name": "宇通客车"
+    },
+    {
+      "code": "600160",
+      "exchange": "SH",
+      "asset_id": "600160.SH",
+      "raw_coefficient": 0.3272,
+      "normalized_weight": 0.061105197303303625,
+      "name": "巨化股份"
+    },
+    {
+      "code": "600183",
+      "exchange": "SH",
+      "asset_id": "600183.SH",
+      "raw_coefficient": 0.0032,
+      "normalized_weight": 0.0005976058415971015,
+      "name": "生益科技"
+    },
+    {
+      "code": "600377",
+      "exchange": "SH",
+      "asset_id": "600377.SH",
+      "raw_coefficient": 0.3849,
+      "normalized_weight": 0.07188077763460136,
+      "name": "宁沪高速"
+    },
+    {
+      "code": "600415",
+      "exchange": "SH",
+      "asset_id": "600415.SH",
+      "raw_coefficient": 0.1269,
+      "normalized_weight": 0.02369880665583506,
+      "name": "小商品城"
+    },
+    {
+      "code": "600660",
+      "exchange": "SH",
+      "asset_id": "600660.SH",
+      "raw_coefficient": 0.185,
+      "normalized_weight": 0.03454908771733243,
+      "name": "福耀玻璃"
+    },
+    {
+      "code": "601077",
+      "exchange": "SH",
+      "asset_id": "601077.SH",
+      "raw_coefficient": 0.2889,
+      "normalized_weight": 0.053952602386688316,
+      "name": "渝农商行"
+    },
+    {
+      "code": "601127",
+      "exchange": "SH",
+      "asset_id": "601127.SH",
+      "raw_coefficient": 0.8396,
+      "normalized_weight": 0.15679683268903952,
+      "name": "赛力斯"
+    },
+    {
+      "code": "601229",
+      "exchange": "SH",
+      "asset_id": "601229.SH",
+      "raw_coefficient": 1.3183,
+      "normalized_weight": 0.2461949315554559,
+      "name": "上海银行"
+    },
+    {
+      "code": "601288",
+      "exchange": "SH",
+      "asset_id": "601288.SH",
+      "raw_coefficient": 0.7038,
+      "normalized_weight": 0.1314359347862625,
+      "name": "农业银行"
+    },
+    {
+      "code": "605499",
+      "exchange": "SH",
+      "asset_id": "605499.SH",
+      "raw_coefficient": 0.6934,
+      "normalized_weight": 0.12949371580107194,
+      "name": "东鹏饮料"
+    }
+  ]
+}

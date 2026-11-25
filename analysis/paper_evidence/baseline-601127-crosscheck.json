@@ -1,0 +1,18 @@
+{
+  "raw": {
+    "T": 21,
+    "cumulative_return": 0.03487171340058737,
+    "daily_mean": 0.002104648405206918,
+    "daily_sd": 0.03133076571489672,
+    "paper_sharpe_correct_mean": 0.02754993914327603,
+    "paper_sharpe_stale_main_mean": 0.04495620363600069
+  },
+  "hfq": {
+    "T": 21,
+    "cumulative_return": 0.034599348996303236,
+    "daily_mean": 0.002084577619580189,
+    "daily_sd": 0.031080688830666916,
+    "paper_sharpe_correct_mean": 0.027125843565572738,
+    "paper_sharpe_stale_main_mean": 0.04531792365428416
+  }
+}

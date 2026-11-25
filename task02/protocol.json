@@ -1,7 +1,19 @@
 {
   "data_version": "csi500_20261111T020022_current_v1",
   "estimation_start": "2025-01-02", "estimation_end": "2026-06-30",
-  "sigma_daily": 0.04, "eta_main": 0.01, "eta_grid": [0, 0.0001, 0.001, 0.01, 0.1],
+  "revised_on": "2026-11-26",
+  "model_positioning": "Empirical nonnegative L1 sparse allocation; shuffled ten-fold raw-risk lambda calibration followed by full-investment normalization. No hard invested-weight or future-risk guarantee.",
+  "main_model": "l1_cv",
+  "sigma_daily": 0.04,
+  "cross_validation": {
+    "n_splits": 10, "seed": 42, "lambda_min": 0.0, "lambda_max": 10.0, "n_lambdas": 100,
+    "criterion": "absolute validation raw-coefficient variance error relative to sigma_daily squared",
+    "aggregation": "mean of per-fold selected lambdas; largest lambda wins exact ties",
+    "zero_policy": "record zero and failed solutions; select only investable nonzero fits",
+    "scope": "estimation period only; shuffled folds reproduce the original procedure and are not chronological validation"
+  },
+  "eta_grid": [0, 0.0001, 0.001, 0.01, 0.1],
+  "eta_role": "supplemental sensitivity; not lambda selection or the main model",
   "extension_pool": "first 20 by estimation liquidity_rank", "extension_n": 20,
   "gamma": 15, "cap": 0.25, "K": 5, "time_limit_seconds": 120,
   "support_reporting_threshold": 1e-8, "feasibility_tolerance": 1e-7

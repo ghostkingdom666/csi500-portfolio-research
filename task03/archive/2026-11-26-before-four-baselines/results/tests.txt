@@ -1,0 +1,24 @@
+test_buy_and_hold OK
+test_cvar_lp OK
+test_equal_weight OK
+test_estimation_risk_statistics_are_labeled_separately OK
+test_failed_status_is_preserved OK
+test_feasible_heuristic_status_validates_real_weights OK
+test_label_alignment OK
+test_metrics OK
+test_mv OK
+test_rebalanced OK
+test_run_exports_risks_and_preserves_heuristic_and_failure_states OK
+test_single_asset OK
+test_task02_rejects_delivery_without_l1_cv OK
+test_task02_rejects_different_weight_and_run_model_sets OK
+test_task02_rejects_mixed_statuses_inside_weight_rows OK
+test_task02_rejects_weight_and_run_status_mismatch OK
+test_var_cvar_hand OK
+test_var_heuristic OK
+test_var_warm_start_preserves_known_feasible_solution OK
+test_verify_detects_task02_provenance_drift OK
+test_weight_validation OK
+test_zero_vol_sharpe OK
+
+全部 22 组测试通过

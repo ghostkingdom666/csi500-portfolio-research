@@ -1,0 +1,410 @@
+{
+  "scope": "Printed 14-stock portfolio on public Tencent prices, not original 278-stock estimation reconstruction",
+  "source": "Retained Tencent fqkline responses; all 28 response hashes checked",
+  "anchor": "2025-03-31 close",
+  "return_start": "2025-04-01",
+  "return_end": "2025-04-30",
+  "n_return_days": 21,
+  "raw_coefficient_sum": 5.354700000000001,
+  "original_paper_claims": {
+    "cumulative_return": 0.0551,
+    "daily_mean": 0.00265,
+    "daily_sd": 0.0137,
+    "sharpe": 0.1023,
+    "annualized_return": 0.9034
+  },
+  "annualization_arithmetic": {
+    "monthly_5_51_compounded_12": 0.9033711243749019,
+    "note": "One-month extrapolation; 252/21=12, not a one-year realized return."
+  },
+  "allocation": {
+    "bank_codes": [
+      "601077.SH",
+      "601229.SH",
+      "601288.SH"
+    ],
+    "bank_raw_coefficient_sum": "2.3110",
+    "bank_normalized_weight_exact_ratio": "2.3110/5.3547",
+    "bank_normalized_weight": 0.4315834687284068,
+    "top4_assets": [
+      "601229.SH",
+      "601127.SH",
+      "601288.SH",
+      "605499.SH"
+    ],
+    "top4_raw_coefficient_sum": "3.5551",
+    "top4_normalized_weight_exact_ratio": "3.5551/5.3547",
+    "top4_normalized_weight": 0.66392141483183,
+    "max_weight": 0.2461949315554559,
+    "hhi": 0.13505375677297224,
+    "effective_holdings": 7.404458964299806,
+    "note": "Bank category includes only 601077/601229/601288; 605499 is Dongpeng Beverage."
+  },
+  "normalized_holdings": [
+    {
+      "asset_id": "000975.SZ",
+      "raw_coefficient": 0.1035,
+      "invested_weight": 0.01932881393915625
+    },
+    {
+      "asset_id": "300442.SZ",
+      "raw_coefficient": 0.0995,
+      "invested_weight": 0.018581806637159876
+    },
+    {
+      "asset_id": "301236.SZ",
+      "raw_coefficient": 0.1873,
+      "invested_weight": 0.034978616915980344
+    },
+    {
+      "asset_id": "600066.SH",
+      "raw_coefficient": 0.0932,
+      "invested_weight": 0.01740527013651558
+    },
+    {
+      "asset_id": "600160.SH",
+      "raw_coefficient": 0.3272,
+      "invested_weight": 0.061105197303303625
+    },
+    {
+      "asset_id": "600183.SH",
+      "raw_coefficient": 0.0032,
+      "invested_weight": 0.0005976058415971015
+    },
+    {
+      "asset_id": "600377.SH",
+      "raw_coefficient": 0.3849,
+      "invested_weight": 0.07188077763460136
+    },
+    {
+      "asset_id": "600415.SH",
+      "raw_coefficient": 0.1269,
+      "invested_weight": 0.02369880665583506
+    },
+    {
+      "asset_id": "600660.SH",
+      "raw_coefficient": 0.185,
+      "invested_weight": 0.03454908771733243
+    },
+    {
+      "asset_id": "601077.SH",
+      "raw_coefficient": 0.2889,
+      "invested_weight": 0.053952602386688316
+    },
+    {
+      "asset_id": "601127.SH",
+      "raw_coefficient": 0.8396,
+      "invested_weight": 0.15679683268903952
+    },
+    {
+      "asset_id": "601229.SH",
+      "raw_coefficient": 1.3183,
+      "invested_weight": 0.2461949315554559
+    },
+    {
+      "asset_id": "601288.SH",
+      "raw_coefficient": 0.7038,
+      "invested_weight": 0.1314359347862625
+    },
+    {
+      "asset_id": "605499.SH",
+      "raw_coefficient": 0.6934,
+      "invested_weight": 0.12949371580107194
+    }
+  ],
+  "limitation": "Original full-precision coefficients and JY return panel unavailable. A mismatch cannot identify its original cause or establish misconduct.",
+  "raw": {
+    "main14_daily_rebalanced": {
+      "n_return_days": 21,
+      "cumulative_return": 0.05390177837277288,
+      "daily_mean": 0.0025948675818696695,
+      "daily_sd": 0.013764273737808832,
+      "annualized_geometric_252": 0.8775938245289165,
+      "annualized_monthly_compound_12": 0.8775938245289165,
+      "paper_mixed_frequency_sharpe": 0.09832555579760235,
+      "annualized_sharpe_rf_1_5pct": 2.9245512310677744,
+      "annualized_sharpe_rf_0": 2.992693012743118,
+      "max_drawdown": -0.04735380832729641
+    },
+    "main14_buy_and_hold": {
+      "n_return_days": 21,
+      "cumulative_return": 0.05117792442466884,
+      "daily_mean": 0.0024698752490738486,
+      "daily_sd": 0.01365748926092534,
+      "annualized_geometric_252": 0.8201818579507116,
+      "annualized_monthly_compound_12": 0.8201818579507116,
+      "paper_mixed_frequency_sharpe": 0.08994241248565675,
+      "annualized_sharpe_rf_1_5pct": 2.802135239011298,
+      "annualized_sharpe_rf_0": 2.8708098041559236,
+      "max_drawdown": -0.04673946548496821
+    },
+    "benchmark601127_daily_rebalanced": {
+      "n_return_days": 21,
+      "cumulative_return": 0.03487171340058737,
+      "daily_mean": 0.0021046484052069025,
+      "daily_sd": 0.03133076571489672,
+      "annualized_geometric_252": 0.5088226542910679,
+      "annualized_monthly_compound_12": 0.5088226542910679,
+      "paper_mixed_frequency_sharpe": 0.02754993914327553,
+      "annualized_sharpe_rf_1_5pct": 1.0364360649199211,
+      "annualized_sharpe_rf_0": 1.0663722032350944,
+      "max_drawdown": -0.0960362220986577
+    },
+    "benchmark601127_buy_and_hold": {
+      "n_return_days": 21,
+      "cumulative_return": 0.03487171340058781,
+      "daily_mean": 0.002104648405206918,
+      "daily_sd": 0.03133076571489672,
+      "annualized_geometric_252": 0.5088226542910756,
+      "annualized_monthly_compound_12": 0.5088226542910756,
+      "paper_mixed_frequency_sharpe": 0.02754993914327603,
+      "annualized_sharpe_rf_1_5pct": 1.0364360649199291,
+      "annualized_sharpe_rf_0": 1.0663722032351022,
+      "max_drawdown": -0.09603622209865759
+    },
+    "benchmark601127_sharpe_stale_main_paper_mean": 0.04495620363600069,
+    "gap_from_paper_bp": 11.982216272271238,
+    "weight_rounding_bounds": {
+      "decimal_half_width": 5e-05,
+      "conservative_cumulative_min": 0.053850234507228034,
+      "conservative_cumulative_max": 0.05395332505074513,
+      "vertex_cumulative_min": 0.05389426499286509,
+      "vertex_cumulative_max": 0.053909292603037784,
+      "note": "Conservative min/max cover any coefficients within half a last printed decimal; vertex cumulative extrema alone are diagnostic, not guaranteed interior extrema.",
+      "paper_5_51_inside_conservative_bounds": false
+    },
+    "per_asset": [
+      {
+        "asset_id": "000975.SZ",
+        "cumulative_return": 0.0546875,
+        "daily_mean": 0.0031332349705786074,
+        "daily_sd": 0.035427959264815435
+      },
+      {
+        "asset_id": "300442.SZ",
+        "cumulative_return": -0.1499824991249562,
+        "daily_mean": -0.006650241895990828,
+        "daily_sd": 0.04581775517155461
+      },
+      {
+        "asset_id": "301236.SZ",
+        "cumulative_return": 0.012900976290097566,
+        "daily_mean": 0.001498032466679138,
+        "daily_sd": 0.04153567041934789
+      },
+      {
+        "asset_id": "600066.SH",
+        "cumulative_return": 0.010939268200679031,
+        "daily_mean": 0.0008251193638666496,
+        "daily_sd": 0.025252443639805392
+      },
+      {
+        "asset_id": "600160.SH",
+        "cumulative_return": 0.028328611898017053,
+        "daily_mean": 0.0016729395632836634,
+        "daily_sd": 0.02652313273551377
+      },
+      {
+        "asset_id": "600183.SH",
+        "cumulative_return": -0.10731348768834992,
+        "daily_mean": -0.004720418368908162,
+        "daily_sd": 0.036889365867832924
+      },
+      {
+        "asset_id": "600377.SH",
+        "cumulative_return": -0.002617801047120394,
+        "daily_mean": -3.2694608369542354e-05,
+        "daily_sd": 0.013892365106203489
+      },
+      {
+        "asset_id": "600415.SH",
+        "cumulative_return": 0.006565988181221227,
+        "daily_mean": 0.0012855755499204338,
+        "daily_sd": 0.04506585080467631
+      },
+      {
+        "asset_id": "600660.SH",
+        "cumulative_return": -0.007683114222298171,
+        "daily_mean": -0.0002267438329970868,
+        "daily_sd": 0.01701948327618043
+      },
+      {
+        "asset_id": "601077.SH",
+        "cumulative_return": 0.1266447368421051,
+        "daily_mean": 0.005903096189180173,
+        "daily_sd": 0.020743362236619284
+      },
+      {
+        "asset_id": "601127.SH",
+        "cumulative_return": 0.03487171340058781,
+        "daily_mean": 0.002104648405206918,
+        "daily_sd": 0.03133076571489672
+      },
+      {
+        "asset_id": "601229.SH",
+        "cumulative_return": 0.05380710659898491,
+        "daily_mean": 0.0025895919960078288,
+        "daily_sd": 0.013824479227426599
+      },
+      {
+        "asset_id": "601288.SH",
+        "cumulative_return": 0.04633204633204646,
+        "daily_mean": 0.0022773160845424604,
+        "daily_sd": 0.01570585657221407
+      },
+      {
+        "asset_id": "605499.SH",
+        "cumulative_return": 0.14873277904968463,
+        "daily_mean": 0.00684262236178748,
+        "daily_sd": 0.021334979901662103
+      }
+    ]
+  },
+  "hfq": {
+    "main14_daily_rebalanced": {
+      "n_return_days": 21,
+      "cumulative_return": 0.04739465712621427,
+      "daily_mean": 0.00228018269458239,
+      "daily_sd": 0.012261175254639179,
+      "annualized_geometric_252": 0.7431078160334348,
+      "annualized_monthly_compound_12": 0.7431078160334348,
+      "paper_mixed_frequency_sharpe": 0.08471414497889274,
+      "annualized_sharpe_rf_1_5pct": 2.875650600675233,
+      "annualized_sharpe_rf_0": 2.9521458889720513,
+      "max_drawdown": -0.04325396912478774
+    },
+    "main14_buy_and_hold": {
+      "n_return_days": 21,
+      "cumulative_return": 0.04521359398193403,
+      "daily_mean": 0.002179345981011644,
+      "daily_sd": 0.012147804699897265,
+      "annualized_geometric_252": 0.7000456917963556,
+      "annualized_monthly_compound_12": 0.7000456917963556,
+      "paper_mixed_frequency_sharpe": 0.07720393007061606,
+      "annualized_sharpe_rf_1_5pct": 2.7707164886732687,
+      "annualized_sharpe_rf_0": 2.847925676599164,
+      "max_drawdown": -0.042734026007026915
+    },
+    "benchmark601127_daily_rebalanced": {
+      "n_return_days": 21,
+      "cumulative_return": 0.034599348996303236,
+      "daily_mean": 0.002084577619580173,
+      "daily_sd": 0.03108068883066692,
+      "annualized_geometric_252": 0.5040643225376156,
+      "annualized_monthly_compound_12": 0.5040643225376156,
+      "paper_mixed_frequency_sharpe": 0.02712584356557222,
+      "annualized_sharpe_rf_1_5pct": 1.034524101423189,
+      "annualized_sharpe_rf_0": 1.0647011075079449,
+      "max_drawdown": -0.09528613425177923
+    },
+    "benchmark601127_buy_and_hold": {
+      "n_return_days": 21,
+      "cumulative_return": 0.03459934899630346,
+      "daily_mean": 0.002084577619580184,
+      "daily_sd": 0.031080688830666916,
+      "annualized_geometric_252": 0.5040643225376193,
+      "annualized_monthly_compound_12": 0.5040643225376193,
+      "paper_mixed_frequency_sharpe": 0.02712584356557257,
+      "annualized_sharpe_rf_1_5pct": 1.0345241014231945,
+      "annualized_sharpe_rf_0": 1.0647011075079504,
+      "max_drawdown": -0.09528613425177923
+    },
+    "benchmark601127_sharpe_stale_main_paper_mean": 0.04531792365428416,
+    "gap_from_paper_bp": 77.05342873785735,
+    "weight_rounding_bounds": {
+      "decimal_half_width": 5e-05,
+      "conservative_cumulative_min": 0.04734919921559322,
+      "conservative_cumulative_max": 0.047440117459222275,
+      "vertex_cumulative_min": 0.047387754952308514,
+      "vertex_cumulative_max": 0.04740156034650522,
+      "note": "Conservative min/max cover any coefficients within half a last printed decimal; vertex cumulative extrema alone are diagnostic, not guaranteed interior extrema.",
+      "paper_5_51_inside_conservative_bounds": false
+    },
+    "per_asset": [
+      {
+        "asset_id": "000975.SZ",
+        "cumulative_return": 0.04964498355675606,
+        "daily_mean": 0.002807394810868357,
+        "daily_sd": 0.0323983609194973
+      },
+      {
+        "asset_id": "300442.SZ",
+        "cumulative_return": -0.14599244768745923,
+        "daily_mean": -0.006489515095509826,
+        "daily_sd": 0.04452256066659581
+      },
+      {
+        "asset_id": "301236.SZ",
+        "cumulative_return": 0.012786545328879129,
+        "daily_mean": 0.0014758948125124503,
+        "daily_sd": 0.041156443374641805
+      },
+      {
+        "asset_id": "600066.SH",
+        "cumulative_return": 0.008006065925661998,
+        "daily_mean": 0.0005427120915100172,
+        "daily_sd": 0.018425399698743624
+      },
+      {
+        "asset_id": "600160.SH",
+        "cumulative_return": 0.026941144539323947,
+        "daily_mean": 0.0015747644698460043,
+        "daily_sd": 0.025189853499233455
+      },
+      {
+        "asset_id": "600183.SH",
+        "cumulative_return": -0.09121230192537055,
+        "daily_mean": -0.004077652683237105,
+        "daily_sd": 0.030844125563462638
+      },
+      {
+        "asset_id": "600377.SH",
+        "cumulative_return": -0.001759803433276863,
+        "daily_mean": -4.19642848820176e-05,
+        "daily_sd": 0.00937346834202672
+      },
+      {
+        "asset_id": "600415.SH",
+        "cumulative_return": 0.006167877240034869,
+        "daily_mean": 0.001141054863323858,
+        "daily_sd": 0.04206121616930318
+      },
+      {
+        "asset_id": "600660.SH",
+        "cumulative_return": -0.006387058519354172,
+        "daily_mean": -0.00020969101975497142,
+        "daily_sd": 0.014047005152382445
+      },
+      {
+        "asset_id": "601077.SH",
+        "cumulative_return": 0.10213556174558946,
+        "daily_mean": 0.004777480212211847,
+        "daily_sd": 0.01676450108469979
+      },
+      {
+        "asset_id": "601127.SH",
+        "cumulative_return": 0.03459934899630346,
+        "daily_mean": 0.002084577619580189,
+        "daily_sd": 0.031080688830666916
+      },
+      {
+        "asset_id": "601229.SH",
+        "cumulative_return": 0.04069975008925386,
+        "daily_mean": 0.0019543702800944493,
+        "daily_sd": 0.010547816247276458
+      },
+      {
+        "asset_id": "601288.SH",
+        "cumulative_return": 0.031116297160638018,
+        "daily_mean": 0.0015144354778422516,
+        "daily_sd": 0.010646353762295273
+      },
+      {
+        "asset_id": "605499.SH",
+        "cumulative_return": 0.15401560266258274,
+        "daily_mean": 0.007027716974311609,
+        "daily_sd": 0.019597928054093966
+      }
+    ]
+  }
+}
