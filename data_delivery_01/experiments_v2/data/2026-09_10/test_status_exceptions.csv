@@ -1,0 +1,3 @@
+﻿date,asset_id,tradable_status,valuation_method,status_source
+2026-10-08,000582.SZ,confirmed_suspended,verified_suspension_carry,raw/status/2026-10-08.json
+2026-10-09,000582.SZ,confirmed_suspended,verified_suspension_carry,raw/status/2026-10-09.json

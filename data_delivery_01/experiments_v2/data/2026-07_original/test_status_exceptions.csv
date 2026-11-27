@@ -1,0 +1,15 @@
+﻿date,asset_id,tradable_status,valuation_method,status_source
+2026-07-09,300567.SZ,confirmed_suspended,verified_suspension_carry,raw/status/2026-07-09.json
+2026-07-10,300567.SZ,confirmed_suspended,verified_suspension_carry,raw/status/2026-07-10.json
+2026-07-13,300567.SZ,confirmed_suspended,verified_suspension_carry,raw/status/2026-07-13.json
+2026-07-14,300567.SZ,confirmed_suspended,verified_suspension_carry,raw/status/2026-07-14.json
+2026-07-15,300567.SZ,confirmed_suspended,verified_suspension_carry,raw/status/2026-07-15.json
+2026-10-08,000582.SZ,confirmed_suspended,verified_suspension_carry,raw/status/2026-10-08.json
+2026-10-09,000582.SZ,confirmed_suspended,verified_suspension_carry,raw/status/2026-10-09.json
+2026-11-02,000831.SZ,confirmed_suspended,verified_suspension_carry,raw/status/2026-11-02.json
+2026-11-03,000831.SZ,confirmed_suspended,verified_suspension_carry,raw/status/2026-11-03.json
+2026-11-04,000831.SZ,confirmed_suspended,verified_suspension_carry,raw/status/2026-11-04.json
+2026-11-05,000831.SZ,confirmed_suspended,verified_suspension_carry,raw/status/2026-11-05.json
+2026-11-06,000831.SZ,confirmed_suspended,verified_suspension_carry,raw/status/2026-11-06.json
+2026-11-09,000831.SZ,confirmed_suspended,verified_suspension_carry,raw/status/2026-11-09.json
+2026-11-10,000831.SZ,confirmed_suspended,verified_suspension_carry,raw/status/2026-11-10.json
